@@ -54,12 +54,12 @@
                   <Font name="Corbel" size="24.0" />
                </font>
             </Text>
-            <Hyperlink layoutX="84.0" layoutY="384.0" text="Don't Have An Account? Sign Up Here." textFill="#0c9bf5" textOverrun="CENTER_ELLIPSIS" underline="true" />
+            <Hyperlink layoutX="84.0" layoutY="384.0" text="Don't Have An Account? Sign Up Here." textFill="#6afaff" textOverrun="CENTER_ELLIPSIS" underline="true" />
             <Label layoutX="145.0" layoutY="221.0" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #1e1c1b;" textFill="#aca5a4" />
             <ImageView fx:id="bar" layoutX="148.0" layoutY="221.0">
             </ImageView>
             <TextField alignment="CENTER" layoutX="146.0" layoutY="279.0" prefHeight="35.0" prefWidth="90.0" promptText="Enter Captcha" style="-fx-border-color: lime; -fx-background-color: white;" />
-            <Hyperlink layoutX="141.0" layoutY="185.0" text="Forget Password?" textFill="#0cb8f5" textOverrun="CENTER_ELLIPSIS" underline="true" />
+            <Hyperlink layoutX="141.0" layoutY="185.0" text="Forget Password?" textFill="#6afaff" textOverrun="CENTER_ELLIPSIS" underline="true" />
             <Button alignment="CENTER" layoutX="157.0" layoutY="332.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="65.0" style="-fx-background-color: lime;" text="Login" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font size="16.0" />

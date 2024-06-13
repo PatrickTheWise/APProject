@@ -21,7 +21,7 @@ public class CaptchaGenerator {
         g2d.setColor(new Color(77, 255, 82));
         g2d.drawString(Cap, 10, 25);
         g2d.dispose();
-        ImageIO.write(bufferedImage, "png", new File("D://JavaProjects//demo1//src//main//resources//com//example//demo1//captcha.png"));
+        ImageIO.write(bufferedImage, "png", new File("captcha.png"));
     }
 
     public static String generateCaptchaString() {
