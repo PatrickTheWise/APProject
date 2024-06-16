@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class CaptchaGenerator {
 
-    public static void captcha(String Cap) throws IOException {
+    public static void captcha(String Cap, int r, int g, int b) throws IOException {
         int width = 90;
         int height = 40;
         BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -18,10 +18,10 @@ public class CaptchaGenerator {
         g2d.fillRect(0, 0, width, height);
         Font font = new Font("Arial", Font.BOLD, 20);
         g2d.setFont(font);
-        g2d.setColor(new Color(77, 255, 82));
-        g2d.drawString(Cap, 10, 25);
+        g2d.setColor(new Color(r, g, b));
+        g2d.drawString(Cap, 7, 25);
         g2d.dispose();
-        ImageIO.write(bufferedImage, "png", new File("captcha.png"));
+        ImageIO.write(bufferedImage, "png", new File("D://JavaProjects//demo1//src//main//resources//com//example//demo1//captcha.png"));
     }
 
     public static String generateCaptchaString() {

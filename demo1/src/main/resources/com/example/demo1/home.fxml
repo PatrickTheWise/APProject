@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomeController">
+   <children>
+      <AnchorPane prefHeight="540.0" prefWidth="800.0" style="-fx-background-color: #231f20; -fx-border-color: #ad974f; -fx-border-width: 1;">
+         <children>
+            <ToolBar layoutX="278.0" layoutY="465.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
+               <items>
+                  <Button minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@transfer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@swap.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </items>
+            </ToolBar>
+            <Text fx:id="price1" fill="WHITE" layoutX="510.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="price5" fill="WHITE" layoutX="511.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="price4" fill="WHITE" layoutX="510.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="price3" fill="WHITE" layoutX="511.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="price2" fill="WHITE" layoutX="511.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="least1" fill="WHITE" layoutX="244.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="change5" fill="WHITE" layoutX="377.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="change3" fill="WHITE" layoutX="377.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="change2" fill="WHITE" layoutX="377.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="change1" fill="WHITE" layoutX="377.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="change4" fill="WHITE" layoutX="377.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="least2" fill="WHITE" layoutX="244.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="least3" fill="WHITE" layoutX="244.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="least4" fill="WHITE" layoutX="244.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="least5" fill="WHITE" layoutX="244.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="most5" fill="WHITE" layoutX="112.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="most4" fill="WHITE" layoutX="112.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="most3" fill="WHITE" layoutX="112.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="most2" fill="WHITE" layoutX="112.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text fx:id="most1" fill="WHITE" layoutX="112.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Hyperlink fx:id="arz1" contentDisplay="RIGHT" layoutX="608.0" layoutY="99.0" text="Hyperlink" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="arz2" contentDisplay="RIGHT" layoutX="608.0" layoutY="169.0" text="Hyperlink" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="arz3" contentDisplay="RIGHT" layoutX="608.0" layoutY="232.0" text="Hyperlink" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="arz4" contentDisplay="RIGHT" layoutX="608.0" layoutY="301.0" text="Hyperlink" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Hyperlink>
+            <Hyperlink fx:id="arz5" contentDisplay="RIGHT" layoutX="608.0" layoutY="364.0" text="Hyperlink" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Hyperlink>
+            <Line endX="534.199951171875" layoutX="177.0" layoutY="142.0" startX="-113.79998779296875" stroke="#eaeaea" />
+            <Line endX="534.199951171875" layoutX="177.0" layoutY="281.0" startX="-107.39999389648438" stroke="#eaeaea" />
+            <Line endX="534.199951171875" layoutX="177.0" layoutY="213.0" startX="-109.79998779296875" stroke="#eaeaea" />
+            <Line endX="534.199951171875" layoutX="182.0" layoutY="346.0" startX="-109.20001220703125" stroke="#eaeaea" />
+            <Line endX="0.20001220703125" endY="337.1999816894531" layoutX="185.0" layoutY="68.0" startX="0.20001220703125" startY="-40.00000762939453" stroke="#eaeaea" />
+            <Line endX="0.20001220703125" endY="337.1999816894531" layoutX="588.0" layoutY="69.0" startX="0.20001220703125" startY="-40.20000457763672" stroke="#eaeaea" />
+            <Line endX="0.20001220703125" endY="337.1999816894531" layoutX="454.0" layoutY="68.0" startX="0.20001220703125" startY="-42.599998474121094" stroke="#eaeaea" />
+            <Line endX="0.20001220703125" endY="337.1999816894531" layoutX="323.0" layoutY="69.0" startX="0.20001220703125" startY="-44.20000457763672" stroke="#eaeaea" />
+            <Line endX="534.199951171875" layoutX="177.0" layoutY="79.0" startX="-114.60000610351562" startY="-7.62939453125E-6" stroke="#eaeaea" />
+            <Text fill="WHITE" layoutX="87.0" layoutY="58.0" onMouseClicked="#handleMostPriceButton" strokeType="OUTSIDE" strokeWidth="0.0" text="بیشترین قیمت" />
+            <Text fill="WHITE" layoutX="222.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کمترین قیمت" />
+            <Text fill="WHITE" layoutX="352.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تغییرات قیمت" />
+            <Text fill="WHITE" layoutX="507.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="قیمت" />
+            <Text fill="WHITE" layoutX="646.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ارز" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

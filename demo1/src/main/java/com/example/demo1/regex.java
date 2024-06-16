@@ -37,4 +37,24 @@ public class regex {
             return false;
         return pat.matcher(email).matches();
     }
+
+    public static boolean isValidPhone(String phone){
+        String regex = "^[0-9]{11}$";
+        Pattern p = Pattern.compile(regex);
+        if (phone == null) {
+            return false;
+        }
+        Matcher m = p.matcher(phone);
+        return m.matches();
+    }
+
+    public static boolean isValidName(String name){
+        String regex = "^[A-Za-z]{3,29}$";
+        Pattern p = Pattern.compile(regex);
+        if (name == null) {
+            return false;
+        }
+        Matcher m = p.matcher(name);
+        return m.matches();
+    }
 }

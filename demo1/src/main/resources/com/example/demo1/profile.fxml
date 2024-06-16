@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="486.0" layoutY="14.0">
+               <image>
+                  <Image url="@profile.png" />
+               </image>
+            </ImageView>
+            <TextField layoutX="38.0" layoutY="51.0" prefHeight="36.0" prefWidth="150.0" promptText="Username" />
+            <TextField layoutX="249.0" layoutY="200.0" prefHeight="36.0" prefWidth="150.0" promptText="Phone Number" />
+            <TextField layoutX="249.0" layoutY="126.0" prefHeight="36.0" prefWidth="150.0" promptText="Email" />
+            <TextField layoutX="38.0" layoutY="126.0" prefHeight="36.0" prefWidth="150.0" promptText="Firstname" />
+            <TextField layoutX="38.0" layoutY="200.0" prefHeight="36.0" prefWidth="150.0" promptText="Lastname" />
+            <TextField layoutX="249.0" layoutY="51.0" prefHeight="36.0" prefWidth="150.0" promptText="Password" />
+            <ToolBar layoutX="178.0" layoutY="319.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
+               <items>
+                  <Button minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0" style="-fx-background-image: D://JavaProjects//demo1//src//main//resources//com//example//demo1//captcha.png;">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@transfer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@swap.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" prefWidth="50.0">
+                     <graphic>
+                        <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </items>
+            </ToolBar>
+            <Button layoutX="491.0" layoutY="113.0" mnemonicParsing="false" text="change photo" />
+            <Button layoutX="38.0" layoutY="260.0" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-pencil-drawing-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

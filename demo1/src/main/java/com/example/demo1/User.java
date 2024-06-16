@@ -7,5 +7,4 @@ public class User {
     String Email;
     String PhoneNumber;
     private String Password;
-    double BitcoinAmount, DashAmount, EtherAmount, TetherAmount, DogeAmount, LiteCoinAmount;
-}
+    }
