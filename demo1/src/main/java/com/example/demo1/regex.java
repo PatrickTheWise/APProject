@@ -1,7 +1,7 @@
 package com.example.demo1;
 import java.util.regex.*;
 
-public class regex {
+public class   regex {
     public static boolean isValidUsername(String name){
         String regex = "^[A-Za-z]\\w{5,29}$";
         Pattern p = Pattern.compile(regex);

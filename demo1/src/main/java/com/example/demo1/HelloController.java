@@ -34,7 +34,7 @@ public class HelloController implements Initializable{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        File file = new File("D://JavaProjects//demo1//src//main//resources//com//example//demo1//captcha.png");
+        File file = new File("captcha.png");
         Image image = new Image(file.toURI().toString());
         bar.setImage(image);
 
