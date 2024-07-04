@@ -13,8 +13,9 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
-
+// login page ...............
 public class HelloController implements Initializable{
 
     String cap;
@@ -25,6 +26,7 @@ public class HelloController implements Initializable{
     private Button login;
     @FXML
     private TextField userField, passField, captchaField;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -63,9 +65,8 @@ public class HelloController implements Initializable{
     }
 
     @FXML
-    public void OpenHome() throws IOException {
-        // must add excel for user check
-        if (captchaField.getText().equals(cap)) {
+    public void OpenHome() throws IOException, SQLException {
+        if (captchaField.getText().equals(cap) && Database.loginCheck(userField.getText(), passField.getText())) {
             Stage newStage = (Stage) login.getScene().getWindow();
             newStage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
@@ -73,6 +74,12 @@ public class HelloController implements Initializable{
             newStage.setScene(scene);
             newStage.show();
         }
-        else captchaField.setStyle("-fx-border-color: red;");
+        else {
+            if (!captchaField.getText().equals(cap)) captchaField.setStyle("-fx-border-color: red;");
+            else {
+                userField.setStyle("-fx-border-color: red;");
+                passField.setStyle("-fx-border-color: red;");
+            }
+        }
     }
 }

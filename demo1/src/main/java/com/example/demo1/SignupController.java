@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SignupController implements Initializable{
@@ -39,10 +40,10 @@ public class SignupController implements Initializable{
     }
 
     @FXML
-    protected void OpenHome() throws IOException {
+    protected void OpenHome() throws IOException, SQLException {
         boolean allowedTo = true;
 
-        if (!regex.isValidName(firstname.getText())){
+        /*if (!regex.isValidName(firstname.getText())){
             firstname.setStyle("-fx-border-color: red;");
             allowedTo = false;
         }
@@ -77,12 +78,13 @@ public class SignupController implements Initializable{
             allowedTo = false;
         }
 
-        if (!captchaField.getText().equals(cap)){
+        */if (!captchaField.getText().equals(cap)){
             captchaField.setStyle("-fx-border-color: red;");
             allowedTo = false;
         }
 
         if (allowedTo) {
+            Database.signedUp(username.getText(),pass.getText(),firstname.getText(),lastname.getText(),email.getText(),phone.getText());
             Stage newStage = (Stage) bar.getScene().getWindow();
             newStage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
