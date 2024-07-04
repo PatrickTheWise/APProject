@@ -53,13 +53,13 @@
                   </Button>
                </items>
             </ToolBar>
-            <TableView layoutX="74.0" layoutY="28.0" prefHeight="400.0" prefWidth="674.0">
+            <TableView layoutX="63.0" layoutY="55.0" prefHeight="400.0" prefWidth="674.0">
               <columns>
                 <TableColumn prefWidth="136.79998779296875" text="C1" />
-                <TableColumn prefWidth="134.4000244140625" text="C2" />
-                  <TableColumn prefWidth="140.0" text="Column X" />
-                  <TableColumn prefWidth="153.5999755859375" text="Column X" />
-                  <TableColumn prefWidth="112.79998779296875" text="Column X" />
+                <TableColumn prefWidth="143.20001220703125" text="C2" />
+                  <TableColumn prefWidth="132.0" text="Column X" />
+                  <TableColumn prefWidth="141.60003662109375" text="Column X" />
+                  <TableColumn prefWidth="124.7999267578125" text="Column X" />
               </columns>
             </TableView>
          </children>

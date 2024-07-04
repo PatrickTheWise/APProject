@@ -43,7 +43,7 @@ public class SignupController implements Initializable{
     protected void OpenHome() throws IOException, SQLException {
         boolean allowedTo = true;
 
-        /*if (!regex.isValidName(firstname.getText())){
+        if (!regex.isValidName(firstname.getText())){
             firstname.setStyle("-fx-border-color: red;");
             allowedTo = false;
         }
@@ -78,7 +78,7 @@ public class SignupController implements Initializable{
             allowedTo = false;
         }
 
-        */if (!captchaField.getText().equals(cap)){
+        if (!captchaField.getText().equals(cap)){
             captchaField.setStyle("-fx-border-color: red;");
             allowedTo = false;
         }
