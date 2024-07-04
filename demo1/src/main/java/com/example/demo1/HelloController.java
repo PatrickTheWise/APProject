@@ -66,7 +66,7 @@ public class HelloController implements Initializable{
 
     @FXML
     public void OpenHome() throws IOException, SQLException {
-        if (captchaField.getText().equals(cap) && Database.loginCheck(userField.getText(), passField.getText())) {
+        if (captchaField.getText().equals(cap) /*&& Database.loginCheck(userField.getText(), passField.getText())*/) {
             Stage newStage = (Stage) login.getScene().getWindow();
             newStage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));

@@ -1,10 +1,10 @@
 package com.example.demo1;
 
 public class User {
-    String Username;
-    String Firstname;
-    String Lastname;
-    String Email;
-    String PhoneNumber;
-    private String Password;
+    public static String Username;
+    public static String Firstname;
+    public static String Lastname;
+    public static String Email;
+    public static String PhoneNumber;
+    public static String Password;
     }
