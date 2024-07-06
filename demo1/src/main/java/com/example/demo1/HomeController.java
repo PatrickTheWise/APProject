@@ -189,8 +189,13 @@ public class HomeController implements Initializable {
         mostpricecol.setCellValueFactory(new PropertyValueFactory<tableview,Double>("mx"));
 
         table.setItems(tableviews);
+
+
         readData();
         showTime();
+
+        //table.setStyle("-fx-background-width:0px");
+        table.setFixedCellSize(30);
     }
 
     public void showTime(){

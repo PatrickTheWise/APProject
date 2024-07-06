@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="540.0" prefWidth="800.0" style="-fx-background-color: #231f20; -fx-border-color: #ad974f; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomeController">
    <children>
       <ToolBar layoutX="278.0" layoutY="465.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
@@ -54,7 +53,7 @@
             </Button>
          </items>
       </ToolBar>
-      <TableView fx:id="table" layoutX="112.0" layoutY="134.0" prefHeight="330.0" prefWidth="594.0" style="-fx-background-color: #231f20;">
+      <TableView fx:id="table" layoutX="112.0" layoutY="134.0" prefHeight="330.0" prefWidth="594.0" style="-fx-background-color: #231f20; -fx-min-height: 50;">
         <columns>
           <TableColumn fx:id="minpricecol" prefWidth="136.79998779296875" style="-fx-background-color: #231f20;" text="کمترین قیمت" />
           <TableColumn fx:id="mostpricecol" prefWidth="143.20001220703125" style="-fx-background-color: #231f20;" text="بیشترین قیمت" />

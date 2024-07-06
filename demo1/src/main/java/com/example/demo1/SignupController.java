@@ -84,7 +84,7 @@ public class SignupController implements Initializable{
 //        }
 
         if (allowedTo) {
-            //Database.signedUp(username.getText(),pass.getText(),firstname.getText(),lastname.getText(),email.getText(),phone.getText());
+            Database.signedUp(username.getText(),pass.getText(),firstname.getText(),lastname.getText(),email.getText(),phone.getText());
             Stage newStage = (Stage) bar.getScene().getWindow();
             newStage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
