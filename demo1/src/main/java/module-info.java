@@ -4,6 +4,7 @@ module com.example.demo1 {
     requires java.desktop;
     requires java.sql;
     requires java.mail;
+    requires commons.math3;
     //requires mysql.connector.j;
 
 
