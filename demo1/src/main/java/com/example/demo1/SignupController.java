@@ -43,45 +43,45 @@ public class SignupController implements Initializable{
     protected void OpenHome() throws IOException, SQLException {
         boolean allowedTo = true;
 
-//        if (!regex.isValidName(firstname.getText())){
-//            firstname.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!regex.isValidName(lastname.getText())){
-//            lastname.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!regex.isValidUsername(username.getText())){
-//            username.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!regex.isValidPassword(pass.getText()) ){
-//            pass.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!pass.getText().equals(repeatPass.getText())){
-//            repeatPass.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!regex.isValidPhone(phone.getText())){
-//            phone.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!regex.isValidEmail(email.getText())){
-//            email.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
-//
-//        if (!captchaField.getText().equals(cap)){
-//            captchaField.setStyle("-fx-border-color: red;");
-//            allowedTo = false;
-//        }
+        if (!regex.isValidName(firstname.getText())){
+            firstname.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!regex.isValidName(lastname.getText())){
+            lastname.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!regex.isValidUsername(username.getText())){
+            username.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!regex.isValidPassword(pass.getText()) ){
+            pass.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!pass.getText().equals(repeatPass.getText())){
+            repeatPass.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!regex.isValidPhone(phone.getText())){
+            phone.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!regex.isValidEmail(email.getText())){
+            email.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
+
+        if (!captchaField.getText().equals(cap)){
+            captchaField.setStyle("-fx-border-color: red;");
+            allowedTo = false;
+        }
 
         if (allowedTo) {
             Database.signedUp(username.getText(),pass.getText(),firstname.getText(),lastname.getText(),email.getText(),phone.getText());
