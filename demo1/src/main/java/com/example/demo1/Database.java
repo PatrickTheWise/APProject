@@ -19,7 +19,7 @@ public class Database {
         Statement stmn = connection().createStatement();
         ResultSet rs = stmn.executeQuery("select * from users");
         while (rs.next()){
-            if (username.equals(rs.getString(1)) && pass.equals(rs.getString(2))){
+            if (username.equals(rs.getString(2)) && pass.equals(rs.getString(3))){
                 return true;
             }
         }
@@ -31,19 +31,25 @@ public class Database {
         boolean isUnique = true;
         ResultSet rs = stmn.executeQuery("select * from users");
         while (rs.next()){
-            if (username.equals(rs.getString(1)) || email.equals(rs.getString(4)) || phone.equals(rs.getString(3))){
+            if (username.equals(rs.getString(2)) || email.equals(rs.getString(5)) || phone.equals(rs.getString(4))){
                 isUnique = false;
             }
         }
         if (isUnique){
-            String sql = ("insert into users (username, password, phone, mail, firstname, lastname)" + "values( ?, ?, ?, ?, ?, ?)");
+            int count = 0;
+            rs = stmn.executeQuery("select walletID from wallet");
+            while (rs.next()){
+                count = rs.getInt(1);
+            }
+            String sql = ("insert into users (walletID, username, pass, phone, mail, firstname, lastname)" + "values(?, ?, ?, ?, ?, ?, ?)");
             PreparedStatement preparedStmt = connection().prepareStatement(sql);
-            preparedStmt.setString (1, username);
-            preparedStmt.setString (2, pass);
-            preparedStmt.setString (3, phone);
-            preparedStmt.setString (4, email);
-            preparedStmt.setString (5, firstname);
-            preparedStmt.setString (6, lastname);
+            preparedStmt.setInt (1, ++count);
+            preparedStmt.setString (2, username);
+            preparedStmt.setString (3, pass);
+            preparedStmt.setString (4, phone);
+            preparedStmt.setString (5, email);
+            preparedStmt.setString (6, firstname);
+            preparedStmt.setString (7, lastname);
             preparedStmt.execute();
         }
     }

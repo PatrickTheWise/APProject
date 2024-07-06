@@ -67,7 +67,7 @@ public class Regression {
             forecastCalendar.set(Calendar.MILLISECOND, 0);
 
             Calendar endCalendar = Calendar.getInstance();
-            endCalendar.set(2024, Calendar.JULY, 8, 12, 35);
+            endCalendar.set(2024, Calendar.JULY, 15, 12, 35);
 
             while (forecastCalendar.before(endCalendar)) {
                 long forecastTimeInMillis = forecastCalendar.getTimeInMillis();
