@@ -9,117 +9,112 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomeController">
+<AnchorPane prefHeight="540.0" prefWidth="800.0" style="-fx-background-color: #231f20; -fx-border-color: #ad974f; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomeController">
    <children>
-      <AnchorPane prefHeight="540.0" prefWidth="800.0" style="-fx-background-color: #231f20; -fx-border-color: #ad974f; -fx-border-width: 1;">
-         <children>
-            <ToolBar layoutX="278.0" layoutY="465.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
-               <items>
-                  <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@home.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="transfer" mnemonicParsing="false">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@transfer.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@swap.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="prof" mnemonicParsing="false" prefWidth="50.0">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@profile.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </items>
-            </ToolBar>
-            <TableView fx:id="table" layoutX="112.0" layoutY="134.0" prefHeight="330.0" prefWidth="594.0" style="-fx-background-color: #231f20;">
-              <columns>
-                <TableColumn fx:id="minpricecol" prefWidth="136.79998779296875" style="-fx-background-color: #231f20;" text="کمترین قیمت" />
-                <TableColumn fx:id="mostpricecol" prefWidth="143.20001220703125" style="-fx-background-color: #231f20;" text="بیشترین قیمت" />
-                  <TableColumn fx:id="changecol" prefWidth="119.20001220703125" style="-fx-background-color: #231f20;" text="تغییرات" />
-                  <TableColumn fx:id="pricecol" prefWidth="102.4000244140625" style="-fx-background-color: #231f20;" text="قیمت" />
-                  <TableColumn fx:id="marketcol" prefWidth="90.4000244140625" style="-fx-background-color: #231f20; -fx-text-color: white;" text="بازار" />
-              </columns>
-            </TableView>
-            <Label fx:id="time" layoutX="358.0" layoutY="14.0" prefHeight="18.0" prefWidth="102.0" textFill="#dcf405">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Label>
-            <ButtonBar layoutX="161.0" layoutY="62.0" prefHeight="40.0" prefWidth="200.0">
-              <buttons>
-                <Button fx:id="yen" mnemonicParsing="false" onAction="#toYen" style="-fx-background-color: #231f20;" text="Button">
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@china.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="Eur" mnemonicParsing="false" onAction="#toEur" style="-fx-background-color: #231f20;" text="Button">
-                     <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@euro.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="Gb" mnemonicParsing="false" onAction="#toGb" style="-fx-background-color: #231f20;" text="Button">
-                     <graphic>
-                        <ImageView fitHeight="76.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@gb.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="Toman" mnemonicParsing="false" onAction="#toToman" style="-fx-background-color: #231f20;" text="Button">
-                     <graphic>
-                        <ImageView fitHeight="59.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@iran.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="Usd" mnemonicParsing="false" onAction="#toUsd" style="-fx-background-color: #231f20;" text="Button">
-                     <graphic>
-                        <ImageView fitHeight="58.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@usa.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-              </buttons>
-            </ButtonBar>
-         </children>
-      </AnchorPane>
+      <ToolBar layoutX="278.0" layoutY="465.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
+         <items>
+            <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="transfer" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@transfer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@swap.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="prof" mnemonicParsing="false" prefWidth="50.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </items>
+      </ToolBar>
+      <TableView fx:id="table" layoutX="112.0" layoutY="134.0" prefHeight="330.0" prefWidth="594.0" style="-fx-background-color: #231f20; -fx-min-height: 50;">
+        <columns>
+          <TableColumn fx:id="minpricecol" prefWidth="136.79998779296875" style="-fx-background-color: #231f20;" text="کمترین قیمت" />
+          <TableColumn fx:id="mostpricecol" prefWidth="143.20001220703125" style="-fx-background-color: #231f20;" text="بیشترین قیمت" />
+            <TableColumn fx:id="changecol" prefWidth="119.20001220703125" style="-fx-background-color: #231f20;" text="تغییرات" />
+            <TableColumn fx:id="pricecol" prefWidth="102.4000244140625" style="-fx-background-color: #231f20;" text="قیمت" />
+            <TableColumn fx:id="marketcol" prefWidth="90.4000244140625" style="-fx-background-color: #231f20; -fx-font-color: #dcf405;" text="بازار" />
+        </columns>
+      </TableView>
+      <Label fx:id="time" layoutX="358.0" layoutY="14.0" prefHeight="18.0" prefWidth="102.0" textFill="#dcf405">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="181.0" layoutY="62.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button fx:id="yen" mnemonicParsing="false" onAction="#toYen" style="-fx-background-color: #231f20;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@china.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Eur" mnemonicParsing="false" onAction="#toEur" style="-fx-background-color: #231f20;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="62.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@euro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Gb" mnemonicParsing="false" onAction="#toGb" style="-fx-background-color: #231f20;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@gb.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Toman" mnemonicParsing="false" onAction="#toToman" style="-fx-background-color: #231f20;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@iran.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Usd" mnemonicParsing="false" onAction="#toUsd" style="-fx-background-color: #231f20;" text="Button">
+               <graphic>
+                  <ImageView fitHeight="58.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@usa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+        </buttons>
+      </ButtonBar>
    </children>
-</VBox>
+</AnchorPane>

@@ -1,8 +1,14 @@
 package com.example.demo1;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class Database {
+
     public static Connection connection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -46,4 +52,9 @@ public class Database {
             preparedStmt.execute();
         }
     }
+
+
+
+
+
 }
