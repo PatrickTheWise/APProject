@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
 
 public class CaptchaGenerator {
@@ -24,6 +25,12 @@ public class CaptchaGenerator {
         ImageIO.write(bufferedImage, "png", new File("captcha.png"));
     }
 
+    public static void code(String text) throws IOException{
+        try (PrintWriter out = new PrintWriter("filename.txt")) {
+            out.println(text);
+        }
+    }
+
     public static String generateCaptchaString() {
         Random rand = new Random();
         int length = 6;
@@ -31,6 +38,15 @@ public class CaptchaGenerator {
         StringBuilder captcha = new StringBuilder(length);
         for (int i = 0; i < length; i++) captcha.append(characters.charAt(rand.nextInt(characters.length())));
         return captcha.toString();
+    }
+
+    public static String CodeGenerator() {
+        Random rand = new Random();
+        int length = 6;
+        String characters = "0123456789";
+        StringBuilder code = new StringBuilder(length);
+        for (int i = 0; i < length; i++) code.append(characters.charAt(rand.nextInt(characters.length())));
+        return code.toString();
     }
 }
 

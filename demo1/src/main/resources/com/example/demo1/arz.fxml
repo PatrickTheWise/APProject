@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="440.0" prefWidth="660.0" style="-fx-background-color: #231f20;">
+         <children>
+            <LineChart layoutX="23.0" layoutY="86.0" prefHeight="254.0" prefWidth="418.0" style="-fx-background-color: #ad974f;">
+              <xAxis>
+                <CategoryAxis prefHeight="6.0" prefWidth="294.0" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis prefHeight="219.0" prefWidth="11.0" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="34.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="arz" textAlignment="CENTER" wrappingWidth="61.336761474609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="421.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="taghirat" textAlignment="CENTER" wrappingWidth="61.336761474609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="286.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="moamelat" textAlignment="CENTER" wrappingWidth="88.53677368164062">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="177.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="price" textAlignment="CENTER" wrappingWidth="61.336761474609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ListView layoutX="455.0" layoutY="86.0" prefHeight="254.0" prefWidth="190.0" />
+            <ToolBar layoutX="386.0" layoutY="356.0" prefHeight="58.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
+               <items>
+                  <Button minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@transfer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@swap.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" prefWidth="50.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@profile.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </items>
+            </ToolBar>
+            <Text fill="WHITE" layoutX="34.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="last moamele" wrappingWidth="310.72264862060547">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

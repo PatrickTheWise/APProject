@@ -58,15 +58,15 @@ public class HelloController implements Initializable{
     public void OpenForgetPassword() throws IOException {
         Stage newStage = (Stage)login.getScene().getWindow();
         newStage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("a.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("ForgetPass.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 660, 440);
         newStage.setScene(scene);
         newStage.show();
     }
 
     @FXML
     public void OpenHome() throws IOException, SQLException {
-        if (captchaField.getText().equals(cap) /*&& Database.loginCheck(userField.getText(), passField.getText())*/) {
+        if (captchaField.getText().equals(cap) && Database.loginCheck(userField.getText(), passField.getText())) {
             Stage newStage = (Stage) login.getScene().getWindow();
             newStage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
