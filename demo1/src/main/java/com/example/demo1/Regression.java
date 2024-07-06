@@ -38,12 +38,12 @@ public class Regression {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
             while (rs.next()) {
-                Date date = rs.getDate("date");
-                Time time = rs.getTime("time");
-                double usd = rs.getDouble("usd");
-                double euro = rs.getDouble("euro");
-                double tooman = rs.getDouble("tooman");
-                double yen = rs.getDouble("yen");
+                Date date = rs.getDate("DATE");
+                Time time = rs.getTime("TIMA");
+                double usd = rs.getDouble("USD");
+                double euro = rs.getDouble("EUR");
+                double tooman = rs.getDouble("TOMAN");
+                double yen = rs.getDouble("YEN");
                 double gpb = rs.getDouble("GBP");
 
                 String dateTimeString = date.toString() + " " + time.toString();

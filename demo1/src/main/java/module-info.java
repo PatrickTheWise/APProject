@@ -4,8 +4,8 @@ module com.example.demo1 {
     requires java.desktop;
     requires java.sql;
     requires java.mail;
+    requires mysql.connector.j;
     requires commons.math3;
-    //requires mysql.connector.j;
 
 
     opens com.example.demo1 to javafx.fxml;
