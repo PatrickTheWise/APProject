@@ -16,7 +16,4 @@ public class Data {
     public static double GBPPrice;
     public static double EURPrice;
     public static double YENPrice;
-
-
-
 }

@@ -19,7 +19,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -90,95 +89,12 @@ public class HomeController implements Initializable {
             new tableview()
     );
 
+//    @FXML
+//    void toswap(){
+//        System.out.println("yes");
+//    }
 
-    @FXML
-    void tohome(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
 
-    @FXML
-    void toprofile(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-
-    @FXML
-    void toswap(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-
-    @FXML
-    void totransfer(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-    @FXML
-    void toEur(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-
-    @FXML
-    void toGb(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-
-    @FXML
-    void toToman(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-
-    @FXML
-    void toUsd(ActionEvent event) {
-        //Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
-
-    @FXML
-    void toYen(ActionEvent event) throws IOException {
-//        Stage newStage = (Stage) time.getScene().getWindow();
-//        newStage.close();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource(""));
-//        Scene scene = new Scene(fxmlLoader.load(), 390, 440);
-//        newStage.setScene(scene);
-//        newStage.show();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -195,7 +111,7 @@ public class HomeController implements Initializable {
         showTime();
 
         //table.setStyle("-fx-background-width:0px");
-        table.setFixedCellSize(30);
+        //table.setFixedCellSize(30);
     }
 
     public void showTime(){
@@ -381,5 +297,33 @@ public class HomeController implements Initializable {
                 Data.GBPMAX = max[4];
             }
         }
+    }
+
+    public void totransfer(ActionEvent actionEvent) {
+    }
+
+    public void toswap(ActionEvent actionEvent) {
+        System.out.println("yes");
+    }
+
+    public void toprof(ActionEvent actionEvent) {
+    }
+
+    public void tohome(ActionEvent actionEvent) {
+    }
+
+    public void toYen(ActionEvent actionEvent) {
+    }
+
+    public void toEur(ActionEvent actionEvent) {
+    }
+
+    public void toGb(ActionEvent actionEvent) {
+    }
+
+    public void toToman(ActionEvent actionEvent) {
+    }
+
+    public void toUsd(ActionEvent actionEvent) {
     }
 }

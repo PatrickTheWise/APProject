@@ -15,7 +15,7 @@
    <children>
       <ToolBar layoutX="278.0" layoutY="465.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
          <items>
-            <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
+            <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" onAction="#tohome" prefHeight="22.0" prefWidth="40.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,7 +24,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="transfer" mnemonicParsing="false">
+            <Button fx:id="transfer" mnemonicParsing="false" onAction="#totransfer">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,7 +33,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" onAction="#toswap" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,7 +42,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="prof" mnemonicParsing="false" prefWidth="50.0">
+            <Button fx:id="prof" mnemonicParsing="false" onAction="#toprof" prefWidth="50.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -55,11 +55,11 @@
       </ToolBar>
       <TableView fx:id="table" layoutX="112.0" layoutY="134.0" prefHeight="330.0" prefWidth="594.0" style="-fx-background-color: #231f20; -fx-min-height: 50;">
         <columns>
-          <TableColumn fx:id="minpricecol" prefWidth="136.79998779296875" style="-fx-background-color: #231f20;" text="کمترین قیمت" />
-          <TableColumn fx:id="mostpricecol" prefWidth="143.20001220703125" style="-fx-background-color: #231f20;" text="بیشترین قیمت" />
-            <TableColumn fx:id="changecol" prefWidth="119.20001220703125" style="-fx-background-color: #231f20;" text="تغییرات" />
-            <TableColumn fx:id="pricecol" prefWidth="102.4000244140625" style="-fx-background-color: #231f20;" text="قیمت" />
-            <TableColumn fx:id="marketcol" prefWidth="90.4000244140625" style="-fx-background-color: #231f20; -fx-font-color: #dcf405;" text="بازار" />
+          <TableColumn fx:id="minpricecol" prefWidth="136.79998779296875" style="-fx-background-color: white;" text="کمترین قیمت" />
+          <TableColumn fx:id="mostpricecol" prefWidth="143.20001220703125" style="-fx-background-color: #ad974f;" text="بیشترین قیمت" />
+            <TableColumn fx:id="changecol" prefWidth="119.20001220703125" style="-fx-background-color: white;" text="تغییرات" />
+            <TableColumn fx:id="pricecol" prefWidth="102.4000244140625" style="-fx-background-color: #ad974f;" text="قیمت" />
+            <TableColumn fx:id="marketcol" prefWidth="90.4000244140625" style="-fx-background-color: white; -fx-font-color: #dcf405;" text="بازار" />
         </columns>
       </TableView>
       <Label fx:id="time" layoutX="358.0" layoutY="14.0" prefHeight="18.0" prefWidth="102.0" textFill="#dcf405">

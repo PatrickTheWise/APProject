@@ -84,6 +84,12 @@ public class SignupController implements Initializable{
         }
 
         if (allowedTo) {
+            User.Username = username.getText();
+            User.Email = email.getText();
+            User.Password = pass.getText();
+            User.Firstname = firstname.getText();
+            User.Lastname = lastname.getText();
+            User.PhoneNumber = phone.getText();
             Database.signedUp(username.getText(),pass.getText(),firstname.getText(),lastname.getText(),email.getText(),phone.getText());
             Stage newStage = (Stage) bar.getScene().getWindow();
             newStage.close();
