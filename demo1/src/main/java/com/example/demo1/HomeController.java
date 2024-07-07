@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -324,6 +325,12 @@ public class HomeController implements Initializable {
     public void toToman(ActionEvent actionEvent) {
     }
 
-    public void toUsd(ActionEvent actionEvent) {
+    public void toUsd(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("arz.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800.0, 540.0);
+        newStage.setScene(scene);
+        newStage.show();
     }
 }

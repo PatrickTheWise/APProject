@@ -11,15 +11,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Swap">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.swapcontroller">
    <children>
       <Label layoutX="210.0" layoutY="8.0" text="swap page" textFill="#ad974f">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="484.0" layoutY="168.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="77.0">
+      <Button fx:id="swapbutton" layoutX="484.0" layoutY="168.0" mnemonicParsing="false" onAction="#swaparz" prefHeight="63.0" prefWidth="77.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,11 +55,11 @@
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="136.0" layoutY="116.0" />
-      <TextField layoutX="137.0" layoutY="277.0" />
+      <TextField fx:id="vorrodi" layoutX="136.0" layoutY="116.0" />
+      <TextField fx:id="khoroji" layoutX="137.0" layoutY="277.0" />
       <ToolBar layoutX="178.0" layoutY="329.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
          <items>
-            <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
+            <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" onAction="#tohome" prefHeight="22.0" prefWidth="40.0">
                <graphic>
                   <ImageView fx:id="homebutton" fitHeight="40.0" fitWidth="40.0" onDragDetected="#toHome" pickOnBounds="true" preserveRatio="true">
                      <image>
