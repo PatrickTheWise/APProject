@@ -76,11 +76,11 @@ public class HomeController implements Initializable {
     @FXML
     private Label time;
     private boolean  st = false;
-    public String[] now = new String[7];
-    public  ArrayList<ArzHa> arzha = new ArrayList<ArzHa>();
-    public double [] max = new double[5]; // 0 = usd    1 = eur    2 = toman    3 = yen   4 = gbp
-    public double [] min = {1000000.0 , 1000000.0 , 1000000.0 , 1000000.0 , 1000000.0};
-    public int lastMinute = -1;
+    private String[] now = new String[7];
+    private  ArrayList<ArzHa> arzha = new ArrayList<ArzHa>();
+    private double [] max = new double[5]; // 0 = usd    1 = eur    2 = toman    3 = yen   4 = gbp
+    private double [] min = {1000000.0 , 1000000.0 , 1000000.0 , 1000000.0 , 1000000.0};
+    private int lastMinute = -1;
 
     ObservableList<tableview> tableviews = FXCollections.observableArrayList(
             new tableview(),
@@ -329,7 +329,7 @@ public class HomeController implements Initializable {
         Stage newStage = (Stage)this.time.getScene().getWindow();
         newStage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("arz.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800.0, 540.0);
+        Scene scene = new Scene(fxmlLoader.load());
         newStage.setScene(scene);
         newStage.show();
     }
