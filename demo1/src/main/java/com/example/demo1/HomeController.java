@@ -77,7 +77,7 @@ public class HomeController implements Initializable {
     private Label time;
     private boolean  st = false;
     private String[] now = new String[7];
-    private  ArrayList<ArzHa> arzha = new ArrayList<ArzHa>();
+    public static   ArrayList<ArzHa> arzha = new ArrayList<ArzHa>();
     private double [] max = new double[5]; // 0 = usd    1 = eur    2 = toman    3 = yen   4 = gbp
     private double [] min = {1000000.0 , 1000000.0 , 1000000.0 , 1000000.0 , 1000000.0};
     private int lastMinute = -1;
@@ -89,11 +89,6 @@ public class HomeController implements Initializable {
             new tableview(),
             new tableview()
     );
-
-//    @FXML
-//    void toswap(){
-//        System.out.println("yes");
-//    }
 
 
 
@@ -111,13 +106,12 @@ public class HomeController implements Initializable {
         readData();
         showTime();
 
-        //table.setStyle("-fx-background-width:0px");
-        //table.setFixedCellSize(30);
     }
 
     public void showTime(){
         Thread thread = new Thread(() -> {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
+            readData();
             while (!st){
                 try {
                     Thread.sleep(1000);
@@ -134,7 +128,7 @@ public class HomeController implements Initializable {
                     calendar.setTime(now[0]);
                     int currentMinute = calendar.get(Calendar.MINUTE);
                     if (currentMinute != lastMinute) {
-                        readData();
+                        //readData();
                         updatetable();
                         lastMinute = currentMinute;
                     }
@@ -303,8 +297,13 @@ public class HomeController implements Initializable {
     public void totransfer(ActionEvent actionEvent) {
     }
 
-    public void toswap(ActionEvent actionEvent) {
-        System.out.println("yes");
+    public void toswap(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("swap.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     public void toprof(ActionEvent actionEvent) {

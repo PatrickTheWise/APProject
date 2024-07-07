@@ -44,7 +44,7 @@
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <MenuButton layoutX="26.0" layoutY="313.0" mnemonicParsing="false" text="TO">
+      <MenuButton fx:id="menuto" layoutX="26.0" layoutY="313.0" mnemonicParsing="false" onAction="#tomenu" text="TO">
         <items>
           <MenuItem fx:id="GBPto" mnemonicParsing="false" onAction="#toGBP" text="GBP" />
           <MenuItem fx:id="YENto" mnemonicParsing="false" onAction="#toYEN" text="YEN" />
@@ -61,7 +61,10 @@
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="vorrodi" layoutX="136.0" layoutY="116.0" />
+      <TextField fx:id="vorrodi" layoutX="136.0" layoutY="116.0" prefHeight="26.0" prefWidth="150.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
       <ToolBar layoutX="178.0" layoutY="421.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
          <items>
             <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" onAction="#tohome" prefHeight="22.0" prefWidth="40.0">
@@ -102,8 +105,11 @@
             </Button>
          </items>
       </ToolBar>
-      <Label layoutX="135.0" layoutY="312.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white;" />
-      <Label fx:id="time" layoutX="24.0" layoutY="26.0">
+      <Label fx:id="khorooji" layoutX="135.0" layoutY="312.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label fx:id="time" layoutX="24.0" layoutY="26.0" prefHeight="18.0" prefWidth="98.0" textFill="#dcf405">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font></Label>
