@@ -18,7 +18,7 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="swapbutton" layoutX="483.0" layoutY="181.0" mnemonicParsing="false" onAction="#swaparz" prefHeight="63.0" prefWidth="77.0">
+      <Button fx:id="swapbutton" layoutX="494.0" layoutY="190.0" mnemonicParsing="false" onAction="#swaparz" prefHeight="54.0" prefWidth="67.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
