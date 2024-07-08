@@ -31,6 +31,16 @@ public class Database {
         }
         return false;
     }
+    public static boolean Wallet_exist(int Wallet) throws SQLException {
+        Statement stmn = connection().createStatement();
+        ResultSet rs = stmn.executeQuery("select * from users");
+        while (rs.next()){
+            if (Wallet == rs.getInt(1)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void signedUp(String username, String pass, String firstname, String lastname, String email, String phone) throws SQLException {
         Statement stmn = connection().createStatement();

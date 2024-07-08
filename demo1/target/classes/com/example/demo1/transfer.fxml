@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.tranferControlller">
    <children>
       <ToolBar layoutX="188.0" layoutY="431.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
          <items>
@@ -74,15 +74,18 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="time" layoutX="46.0" layoutY="32.0" prefHeight="18.0" prefWidth="86.0" text="Label" textFill="#dcf405">
+      <Label fx:id="time" layoutX="46.0" layoutY="32.0" prefHeight="18.0" prefWidth="86.0" textFill="#dcf405">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <MenuButton layoutX="37.0" layoutY="130.0" mnemonicParsing="false" text="Exchange">
+      <MenuButton fx:id="exchangemenu" layoutX="37.0" layoutY="130.0" mnemonicParsing="false" text="Exchange">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem fx:id="exchangeGBP" mnemonicParsing="false" onAction="#GBP" text="GBP" />
+          <MenuItem fx:id="exchangeTOMAN" mnemonicParsing="false" onAction="#TOMAN" text="TOMAN" />
+            <MenuItem fx:id="exchangeUSD" mnemonicParsing="false" onAction="#USD" text="USD" />
+            <MenuItem fx:id="exchangeEUR" mnemonicParsing="false" onAction="#EUR" text="EUR" />
+            <MenuItem fx:id="exchangeYEN" mnemonicParsing="false" onAction="#YEN" text="YEN" />
         </items>
          <font>
             <Font name="System Bold Italic" size="12.0" />
