@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class profilecontroller implements Initializable {
@@ -64,28 +65,36 @@ public class profilecontroller implements Initializable {
     private MenuButton exchangemenu;
 
     @FXML
-    void changefirstname(ActionEvent event) {
+    void changefirstname(ActionEvent event) throws SQLException {
         User.Firstname = firstnametextfield.getText();
+        Database.profileUpdater("firstname", User.Firstname, User.walletID);
     }
 
     @FXML
-    void changelastname(ActionEvent event) {
+    void changelastname(ActionEvent event) throws SQLException {
         User.Lastname = lastnametextfiled.getText();
+        Database.profileUpdater("lastname", User.Lastname, User.walletID);
+
     }
 
     @FXML
-    void changepassword(ActionEvent event) {
-        User.Password = password.getText();
+    void changepassword(ActionEvent event) throws SQLException {
+        User.Password = passtextfield.getText();
+        Database.profileUpdater("pass", User.Password, User.walletID);
+
     }
 
     @FXML
-    void changephone(ActionEvent event) {
-        User.PhoneNumber = passtextfield.getText();
+    void changephone(ActionEvent event) throws SQLException {
+        User.PhoneNumber = phonetextfiled.getText();
+        Database.profileUpdater("phone", User.PhoneNumber, User.walletID);
     }
 
     @FXML
-    void chnageemail(ActionEvent event) {
+    void chnageemail(ActionEvent event) throws SQLException {
         User.Email = emailtextfield.getText();
+        Database.profileUpdater("mail", User.Email, User.walletID);
+
     }
 
     @FXML

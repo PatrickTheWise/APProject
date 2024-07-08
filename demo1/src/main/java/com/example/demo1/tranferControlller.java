@@ -65,31 +65,39 @@ public class tranferControlller implements Initializable {
     @FXML
     void confirm(ActionEvent event) throws SQLException {
         if (Database.Wallet_exist(Integer.parseInt(wallettext.getText()))){
-            if (enough_mojoodi(User.EUR,Double.parseDouble(moneytext.getText())) && moneytext.getText().equals("EUR")){
+            if (enough_mojoodi(User.EUR,Double.parseDouble(moneytext.getText())) && exchangemenu.getText().equals("EUR")){
                 User.EUR -= Double.parseDouble(moneytext.getText());
+                Database.TransferConfirmed("EUR", Double.parseDouble(moneytext.getText()), User.walletID, Integer.parseInt(wallettext.getText()));
                 moneytext.setText("");
                 wallettext.setText("");
-                /// inja bayad sql bezanim
             }
-            else if (enough_mojoodi(User.TMN,Double.parseDouble(moneytext.getText())) && moneytext.getText().equals("TMN")){
+            else if (enough_mojoodi(User.TMN,Double.parseDouble(moneytext.getText())) && exchangemenu.getText().equals("TMN")){
                 User.TMN -= Double.parseDouble(moneytext.getText());
+                Database.TransferConfirmed("Toman", Double.parseDouble(moneytext.getText()), User.walletID, Integer.parseInt(wallettext.getText()));
                 moneytext.setText("");
                 wallettext.setText("");
+
             }
-            else if (enough_mojoodi(User.USD,Double.parseDouble(moneytext.getText())) && moneytext.getText().equals("USD")){
+            else if (enough_mojoodi(User.USD,Double.parseDouble(moneytext.getText())) && exchangemenu.getText().equals("USD")){
                 User.USD -= Double.parseDouble(moneytext.getText());
+                Database.TransferConfirmed("USD", Double.parseDouble(moneytext.getText()), User.walletID, Integer.parseInt(wallettext.getText()));
                 moneytext.setText("");
                 wallettext.setText("");
+
             }
-            else if (enough_mojoodi(User.YEN,Double.parseDouble(moneytext.getText())) && moneytext.getText().equals("YEN")){
+            else if (enough_mojoodi(User.YEN,Double.parseDouble(moneytext.getText())) && exchangemenu.getText().equals("YEN")){
                 User.YEN -= Double.parseDouble(moneytext.getText());
+                Database.TransferConfirmed("YEN", Double.parseDouble(moneytext.getText()), User.walletID, Integer.parseInt(wallettext.getText()));
                 moneytext.setText("");
                 wallettext.setText("");
+
             }
-            else if (enough_mojoodi(User.GBP,Double.parseDouble(moneytext.getText())) && moneytext.getText().equals("GBP")){
+            else if (enough_mojoodi(User.GBP,Double.parseDouble(moneytext.getText())) && exchangemenu.getText().equals("GBP")){
                 User.GBP -= Double.parseDouble(moneytext.getText());
+                Database.TransferConfirmed("GBP", Double.parseDouble(moneytext.getText()), User.walletID, Integer.parseInt(wallettext.getText()));
                 moneytext.setText("");
                 wallettext.setText("");
+
             }
         }
     }

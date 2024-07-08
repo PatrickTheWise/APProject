@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import java.lang.reflect.Field;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -115,25 +116,188 @@ public class Database {
     }
 
     public static void currencySwap(String givenC, String takenC, double givenM, double takenM, int walletID) throws SQLException {
-        String query = "update wallet set ? = ? , ? = ? where walletID = ?";
-        PreparedStatement preparedStatement = connection().prepareStatement(query);
-        preparedStatement.setString(1, givenC);
-        preparedStatement.setDouble(2, givenM);
-        preparedStatement.setString(3, takenC);
-        preparedStatement.setDouble(4, takenM);
-        preparedStatement.setInt(5, walletID);
-        preparedStatement.execute();
+        if (givenC.equals("USD") && takenC.equals("YEN")) {
+            String query = "update wallet set USD = ? , YEN = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("USD") && takenC.equals("Toman")) {
+            String query = "update wallet set USD = ? , Toman = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("USD") && takenC.equals("GBP")) {
+            String query = "update wallet set USD = ? , GBP = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("USD") && takenC.equals("EUR")) {
+            String query = "update wallet set USD = ? , EUR = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("GBP") && takenC.equals("YEN")) {
+            String query = "update wallet set GBP = ? , YEN = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("GBP") && takenC.equals("EUR")) {
+            String query = "update wallet set GBP = ? , EUR = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("GBP") && takenC.equals("Toman")) {
+            String query = "update wallet set GBP = ? , Toman = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("GBP") && takenC.equals("USD")) {
+            String query = "update wallet set GBP = ? , USD = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("YEN") && takenC.equals("USD")) {
+            String query = "update wallet set YEN = ? , USD = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("YEN") && takenC.equals("Toman")) {
+            String query = "update wallet set YEN = ? , Toman = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("Yen") && takenC.equals("GBP")) {
+            String query = "update wallet set YEN = ? , GBP = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("YEN") && takenC.equals("EUR")) {
+            String query = "update wallet set YEN = ? , EUR = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("EUR") && takenC.equals("USD")) {
+            String query = "update wallet set EUR = ? , USD = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("EUR") && takenC.equals("YEN")) {
+            String query = "update wallet set EUR = ? , YEN = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("EUR") && takenC.equals("GBP")) {
+            String query = "update wallet set EUR = ? , GBP = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("EUR") && takenC.equals("Toman")) {
+            String query = "update wallet set EUR = ? , Toman = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("Toman") && takenC.equals("EUR")) {
+            String query = "update wallet set Toman = ? , EUR = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("Toman") && takenC.equals("USD")) {
+            String query = "update wallet set Toman = ? , USD = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("Toman") && takenC.equals("GBP")) {
+            String query = "update wallet set Toman = ? , GBP = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }else if (givenC.equals("Toman") && takenC.equals("YEN")) {
+            String query = "update wallet set Toman = ? , YEN = ? where walletID = ?";
+            PreparedStatement preparedStatement = connection().prepareStatement(query);
+            preparedStatement.setDouble(1, givenM);
+            preparedStatement.setDouble(2, takenM);
+            preparedStatement.setInt(3, walletID);
+            preparedStatement.execute();
+        }
     }
 
-    public static boolean WalletCheck(int Wallet) throws SQLException {
-        Statement stmn = connection().createStatement();
-        ResultSet rs = stmn.executeQuery("select * from users");
+    public static void profileUpdater(String field,String updated, int walletID) throws SQLException {
+        String query = "update users set ? = ? where walletID = ?";
+        PreparedStatement preparedStatement = connection().prepareStatement(query);
+        preparedStatement.setString(1, field);
+        preparedStatement.setString(2, updated);
+        preparedStatement.setInt(3, walletID);
+        preparedStatement.executeUpdate();
+    }
+
+    public static void TransferConfirmed(String field, double updated, int walletID, int walletID2) throws SQLException {
+        double kir = 0.0;
+        String query = "select ? from wallet where walletID = ?";
+        PreparedStatement preparedStatement = connection().prepareStatement(query);
+        preparedStatement.setString(1, field);
+        preparedStatement.setInt(2, walletID);
+        ResultSet rs = preparedStatement.executeQuery();
         while (rs.next()) {
-            if (Wallet == rs.getInt(1)) {
-                return true;
-            }
+            kir = rs.getDouble(field);
         }
-        return false;
+        String query2 = "update wallet set ? = ? where walletID = ?";
+        preparedStatement = connection().prepareStatement(query2);
+        preparedStatement.setString(1, field);
+        preparedStatement.setDouble(2, kir + updated);
+        preparedStatement.setInt(3, walletID);
+        preparedStatement.execute();
+        String query3 = "select ? from wallet where walletID = ?";
+        preparedStatement = connection().prepareStatement(query3);
+        preparedStatement.setString(1, field);
+        preparedStatement.setInt(2, walletID2);
+        rs = preparedStatement.executeQuery();
+        while (rs.next()) {
+            kir = rs.getDouble(field);
+        }
+        String query4 = "update wallet set ? = ? where walletID = ?";
+        preparedStatement = connection().prepareStatement(query4);
+        preparedStatement.setString(1, field);
+        preparedStatement.setDouble(2, kir - updated);
+        preparedStatement.setInt(3, walletID2);
+        preparedStatement.execute();
     }
 }
 

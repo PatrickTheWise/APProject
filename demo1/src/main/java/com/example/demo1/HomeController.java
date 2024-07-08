@@ -298,7 +298,7 @@ public class HomeController implements Initializable {
     public void totransfer(ActionEvent actionEvent) throws IOException {
         Stage newStage = (Stage)this.transfer.getScene().getWindow();
         newStage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("transfer.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         newStage.setScene(scene);
         newStage.show();
