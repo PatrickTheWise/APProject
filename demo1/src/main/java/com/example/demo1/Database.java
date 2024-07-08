@@ -20,6 +20,8 @@ public class Database {
         ResultSet rs = stmn.executeQuery("select * from users");
         while (rs.next()){
             if (username.equals(rs.getString(2)) && pass.equals(rs.getString(3))){
+
+                ///inja etelato dakhel class user mirizim  ****************************
                 return true;
             }
         }

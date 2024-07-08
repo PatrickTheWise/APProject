@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.swapcontroller">
+<AnchorPane prefHeight="488.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.swapcontroller">
    <children>
       <Label layoutX="210.0" layoutY="8.0" text="swap page" textFill="#ad974f">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="swapbutton" layoutX="484.0" layoutY="168.0" mnemonicParsing="false" onAction="#swaparz" prefHeight="63.0" prefWidth="77.0">
+      <Button fx:id="swapbutton" layoutX="483.0" layoutY="181.0" mnemonicParsing="false" onAction="#swaparz" prefHeight="63.0" prefWidth="77.0">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,10 +27,13 @@
             </ImageView>
          </graphic>
       </Button>
-      <MenuButton layoutX="26.0" layoutY="116.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton fx:id="menuswap" layoutX="26.0" layoutY="116.0" mnemonicParsing="false" onAction="#menuto" text="SWAP">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem fx:id="GBPswap" mnemonicParsing="false" onAction="#swapGBP" text="GBP" />
+          <MenuItem fx:id="YENswap" mnemonicParsing="false" onAction="#swapYEN" text="YEN" />
+            <MenuItem fx:id="TOMANswap" mnemonicParsing="false" onAction="#swapTOMAN" text="TOMAN" />
+            <MenuItem fx:id="USDswap" mnemonicParsing="false" onAction="#swapUSD" text="USD" />
+            <MenuItem fx:id="EURswap" mnemonicParsing="false" onAction="#swapEUR" text="EUR" />
         </items>
          <font>
             <Font name="System Bold" size="12.0" />
@@ -41,34 +44,39 @@
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <MenuButton layoutX="25.0" layoutY="277.0" mnemonicParsing="false" text="MenuButton">
+      <MenuButton fx:id="menuto" layoutX="26.0" layoutY="313.0" mnemonicParsing="false" onAction="#tomenu" text="TO">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem fx:id="GBPto" mnemonicParsing="false" onAction="#toGBP" text="GBP" />
+          <MenuItem fx:id="YENto" mnemonicParsing="false" onAction="#toYEN" text="YEN" />
+            <MenuItem fx:id="TOMANto" mnemonicParsing="false" onAction="#toTOMAN" text="TOMAN" />
+            <MenuItem fx:id="USDto" mnemonicParsing="false" onAction="#toUSD" text="USD" />
+            <MenuItem fx:id="EURto" mnemonicParsing="false" onAction="#toEUR" text="EUR" />
         </items>
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </MenuButton>
-      <Label layoutX="26.0" layoutY="231.0" text="to" textFill="#eaeaea">
+      <Label layoutX="26.0" layoutY="276.0" text="to" textFill="#eaeaea">
          <font>
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="vorrodi" layoutX="136.0" layoutY="116.0" />
-      <TextField fx:id="khoroji" layoutX="137.0" layoutY="277.0" />
-      <ToolBar layoutX="178.0" layoutY="329.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
+      <TextField fx:id="vorrodi" layoutX="136.0" layoutY="116.0" prefHeight="26.0" prefWidth="150.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
+      <ToolBar layoutX="178.0" layoutY="421.0" prefHeight="66.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
          <items>
             <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" onAction="#tohome" prefHeight="22.0" prefWidth="40.0">
                <graphic>
-                  <ImageView fx:id="homebutton" fitHeight="40.0" fitWidth="40.0" onDragDetected="#toHome" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@home.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="transfer" mnemonicParsing="false">
+            <Button fx:id="transfer" mnemonicParsing="false" onAction="#totransfer">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -77,7 +85,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" onAction="#toswap" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -86,7 +94,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="prof" mnemonicParsing="false" prefWidth="50.0">
+            <Button fx:id="prof" mnemonicParsing="false" onAction="#toprof" prefWidth="50.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -97,5 +105,13 @@
             </Button>
          </items>
       </ToolBar>
+      <Label fx:id="khorooji" layoutX="135.0" layoutY="312.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label fx:id="time" layoutX="24.0" layoutY="26.0" prefHeight="18.0" prefWidth="98.0" textFill="#dcf405">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

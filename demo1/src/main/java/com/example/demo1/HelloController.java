@@ -73,6 +73,8 @@ public class HelloController implements Initializable{
             Scene scene = new Scene(fxmlLoader.load(), 800, 540);
             newStage.setScene(scene);
             newStage.show();
+            User.Username = userField.getText();
+            User.Password = userField.getText();
         }
         else {
             if (!captchaField.getText().equals(cap)) captchaField.setStyle("-fx-border-color: red;");
