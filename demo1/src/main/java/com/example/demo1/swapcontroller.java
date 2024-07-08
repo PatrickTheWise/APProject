@@ -339,8 +339,13 @@ public class swapcontroller implements Initializable {
     void toswap(ActionEvent event) {}
 
     @FXML
-    void totransfer(ActionEvent event) {
-
+    void totransfer(ActionEvent event) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("transfer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     @Override
