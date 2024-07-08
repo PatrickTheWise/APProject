@@ -271,7 +271,7 @@ public class GBPController implements Initializable {
                     double GBP = resultSet.getDouble("GBP");
                     this.price.setText("Price : " + GBP);
                 }
-                changePercentage.setText(Database.changePercentage("GBP"));
+                changePercentage.setText("Change : " + Database.changePercentage("GBP"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

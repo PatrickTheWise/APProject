@@ -1,6 +1,7 @@
 package com.example.demo1;
 
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -69,13 +70,15 @@ public class Database {
         }
     }
     public static String changePercentage(String columnname) {
+            DecimalFormat df = new DecimalFormat("#.00");
+
         try{
         // Create a statement
             LocalDate currentDate = LocalDate.now();
             LocalTime currentTime = LocalTime.now();
             String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-            String query = "SELECT " + columnname + " FROM ag WHERE CONCAT(date, ' ', tima) <= ? ORDER BY CONCAT(date, ' ', tima) DESC LIMIT 2";
+            String query = "SELECT " + columnname + " FROM ag WHERE date <= ? ORDER BY date DESC LIMIT 2";
             PreparedStatement preparedStatement = connection().prepareStatement(query);
             preparedStatement.setString(1, formattedDate + " " + formattedTime);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,7 +87,7 @@ public class Database {
             double currentPrice = resultSet.getDouble(columnname);
             if (previousPrice != 0.0) {
                 double percentChange = ((currentPrice - previousPrice) / previousPrice) * 100.0;
-                return (percentChange + "%");
+                return (df.format(percentChange) + "%");
             }
             previousPrice = currentPrice;
         }

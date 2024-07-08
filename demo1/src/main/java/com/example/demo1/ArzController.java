@@ -271,7 +271,7 @@ public class ArzController implements Initializable {
                     double usd = resultSet.getDouble("usd");
                     this.price.setText("Price : " +usd);
                 }
-                changePercentage.setText(Database.changePercentage("USD"));
+                changePercentage.setText("Change : " + Database.changePercentage("USD"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

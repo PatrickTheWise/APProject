@@ -271,7 +271,7 @@ public class YenController implements Initializable {
                     double Yen = resultSet.getDouble("Yen");
                     this.price.setText("Price : " + Yen);
                 }
-                changePercentage.setText(Database.changePercentage("YEN"));
+                changePercentage.setText("Change : " + Database.changePercentage("YEN"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

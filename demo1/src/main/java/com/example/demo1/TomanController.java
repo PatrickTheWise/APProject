@@ -271,7 +271,7 @@ public class TomanController implements Initializable {
                     double Toman = resultSet.getDouble("TOMAN");
                     this.price.setText("Price : " + Toman);
                 }
-                changePercentage.setText(Database.changePercentage("TOMAN"));
+                changePercentage.setText("Change : " + Database.changePercentage("TOMAN"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

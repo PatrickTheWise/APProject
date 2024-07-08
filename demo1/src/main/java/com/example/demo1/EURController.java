@@ -271,7 +271,7 @@ public class EURController implements Initializable {
                     double EUR = resultSet.getDouble("EUR");
                     this.price.setText("Price : " + EUR);
                 }
-                changePercentage.setText(Database.changePercentage("EUR"));
+                changePercentage.setText("Change : " + Database.changePercentage("EUR"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {
