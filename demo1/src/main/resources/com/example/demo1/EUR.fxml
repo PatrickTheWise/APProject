@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -19,18 +18,18 @@
          <children>
             <LineChart fx:id="LineChart" layoutX="23.0" layoutY="86.0" prefHeight="320.0" prefWidth="418.0" style="-fx-background-color: #ad974f;">
               <xAxis>
-                <NumberAxis fx:id="xAxis" prefHeight="6.0" prefWidth="294.0" side="BOTTOM" />
+                <NumberAxis prefHeight="6.0" prefWidth="294.0" side="BOTTOM" fx:id="xAxis" />
               </xAxis>
               <yAxis>
                 <NumberAxis fx:id="yAxis" prefHeight="219.0" prefWidth="11.0" side="LEFT" />
               </yAxis>
             </LineChart>
-            <Text fx:id="currencyName" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="84.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="arz" textAlignment="CENTER" wrappingWidth="61.336761474609375">
+            <Text fx:id="currencyName" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="84.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EUR" textAlignment="CENTER" wrappingWidth="61.336761474609375">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text fx:id="price" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="717.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="قیمت:" textAlignment="RIGHT" wrappingWidth="61.336761474609375">
+            <Text fx:id="price" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="637.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="قیمت:" textAlignment="RIGHT" wrappingWidth="141.33676147460938">
                <font>
                   <Font size="15.0" />
                </font>
@@ -81,8 +80,11 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <ImageView fx:id="CurrencyIMG" fitHeight="48.0" fitWidth="50.0" layoutX="49.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
-            <Text fx:id="price1" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="561.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تغییرات:" textAlignment="RIGHT" wrappingWidth="61.336761474609375">
+            <ImageView fx:id="CurrencyIMG" fitHeight="48.0" fitWidth="50.0" layoutX="49.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@euro.png" />
+               </image></ImageView>
+            <Text fx:id="changePercentage" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="455.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تغییرات:" textAlignment="RIGHT" wrappingWidth="171.73678588867188">
                <font>
                   <Font size="15.0" />
                </font>

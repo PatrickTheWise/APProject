@@ -42,7 +42,7 @@ public class EURController implements Initializable {
     @FXML
     private ListView<?> orderLists;
     @FXML
-    private Text price;
+    private Text price, changePercentage;
 
     @FXML
     private Button daily, minute;
@@ -269,8 +269,9 @@ public class EURController implements Initializable {
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
                     double EUR = resultSet.getDouble("EUR");
-                    this.price.setText(String.valueOf(EUR));
+                    this.price.setText("Price : " + EUR);
                 }
+                changePercentage.setText(Database.changePercentage("EUR"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

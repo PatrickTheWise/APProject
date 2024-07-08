@@ -42,7 +42,7 @@ public class YenController implements Initializable {
     @FXML
     private ListView<?> orderLists;
     @FXML
-    private Text price;
+    private Text price, changePercentage;
 
     @FXML
     private Button daily, minute;
@@ -269,8 +269,9 @@ public class YenController implements Initializable {
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
                     double Yen = resultSet.getDouble("Yen");
-                    this.price.setText(String.valueOf(Yen));
+                    this.price.setText("Price : " + Yen);
                 }
+                changePercentage.setText(Database.changePercentage("YEN"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

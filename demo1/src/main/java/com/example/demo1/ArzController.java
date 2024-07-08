@@ -42,7 +42,7 @@ public class ArzController implements Initializable {
     @FXML
     private ListView<?> orderLists;
     @FXML
-    private Text price;
+    private Text price, changePercentage;
 
     @FXML
     private Button daily, minute;
@@ -269,8 +269,9 @@ public class ArzController implements Initializable {
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
                     double usd = resultSet.getDouble("usd");
-                    this.price.setText(String.valueOf(usd));
+                    this.price.setText("Price : " +usd);
                 }
+                changePercentage.setText(Database.changePercentage("USD"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

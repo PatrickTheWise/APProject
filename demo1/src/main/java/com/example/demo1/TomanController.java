@@ -42,7 +42,7 @@ public class TomanController implements Initializable {
     @FXML
     private ListView<?> orderLists;
     @FXML
-    private Text price;
+    private Text price, changePercentage;
 
     @FXML
     private Button daily, minute;
@@ -268,9 +268,10 @@ public class TomanController implements Initializable {
                 preparedStatement.setString(1, formattedDate + " " + formattedTime);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                    double Toman = resultSet.getDouble("Toman");
-                    this.price.setText(String.valueOf(Toman));
+                    double Toman = resultSet.getDouble("TOMAN");
+                    this.price.setText("Price : " + Toman);
                 }
+                changePercentage.setText(Database.changePercentage("TOMAN"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {

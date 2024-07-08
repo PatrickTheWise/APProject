@@ -42,7 +42,7 @@ public class GBPController implements Initializable {
     @FXML
     private ListView<?> orderLists;
     @FXML
-    private Text price;
+    private Text price, changePercentage;
 
     @FXML
     private Button daily, minute;
@@ -269,8 +269,9 @@ public class GBPController implements Initializable {
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
                     double GBP = resultSet.getDouble("GBP");
-                    this.price.setText(String.valueOf(GBP));
+                    this.price.setText("Price : " + GBP);
                 }
+                changePercentage.setText(Database.changePercentage("GBP"));
             } catch (Throwable var20) {
                 if (connect != null) {
                     try {
