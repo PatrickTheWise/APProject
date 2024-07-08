@@ -30,7 +30,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class ArzController implements Initializable {
+public class EURController implements Initializable {
     @FXML
     private ImageView CurrencyIMG;
     @FXML
@@ -56,7 +56,7 @@ public class ArzController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.series = new XYChart.Series();
-        series.setName("USD");
+        series.setName("EUR");
         this.LineChart.getData().add(this.series);
         this.xAxis.setAutoRanging(false);
         this.xAxis.setLowerBound(0.0);
@@ -116,7 +116,7 @@ public class ArzController implements Initializable {
             String startOfMinuteTime = startOfMinute.format(timeFormatter);
             String endOfMinuteDate = endOfMinute.format(dateFormatter);
             String endOfMinuteTime = endOfMinute.format(timeFormatter);
-            String query = "SELECT AVG(USD) as avg_usd FROM ag WHERE (DATE = '" + startOfMinuteDate + "' AND TIMA >= '" + startOfMinuteTime + "') OR (DATE = '" + endOfMinuteDate + "' AND TIMA < '" + endOfMinuteTime + "')";
+            String query = "SELECT AVG(EUR) as avg_EUR FROM ag WHERE (DATE = '" + startOfMinuteDate + "' AND TIMA >= '" + startOfMinuteTime + "') OR (DATE = '" + endOfMinuteDate + "' AND TIMA < '" + endOfMinuteTime + "')";
 
             try {
                 Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exchange", "root", (String)null);
@@ -129,7 +129,7 @@ public class ArzController implements Initializable {
 
                         try {
                             if (rs.next()) {
-                                double avgPrice = rs.getDouble("avg_usd");
+                                double avgPrice = rs.getDouble("avg_EUR");
                                 this.series.getData().add(new XYChart.Data(30 - i, avgPrice));
                             }
                         } catch (Throwable var20) {
@@ -197,14 +197,14 @@ public class ArzController implements Initializable {
             LocalDate date = now.minusDays(i);
             String dateString = date.format(dateFormatter);
 
-            String query = "SELECT AVG(usd) as avg_usd FROM ag WHERE date = '" + dateString + "'";
+            String query = "SELECT AVG(EUR) as avg_EUR FROM ag WHERE date = '" + dateString + "'";
 
             try (Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exchange", "root", (String)null);
                  Statement stmt = connect.createStatement();
                  ResultSet rs = stmt.executeQuery(query)) {
 
                 if (rs.next()) {
-                    double avgPrice = rs.getDouble("avg_usd");
+                    double avgPrice = rs.getDouble("avg_EUR");
                     series.getData().add(new XYChart.Data<>(30 - i, avgPrice));
                 }
             } catch (Exception e) {
@@ -233,7 +233,7 @@ public class ArzController implements Initializable {
             String endOfHourDate = endOfHour.format(dateFormatter);
             String endOfHourTime = endOfHour.format(timeFormatter);
 
-            String query = "SELECT AVG(usd) as avg_usd FROM ag WHERE " +
+            String query = "SELECT AVG(EUR) as avg_EUR FROM ag WHERE " +
                     "(date = '" + startOfHourDate + "' AND tima >= '" + startOfHourTime + "') OR " +
                     "(date = '" + endOfHourDate + "' AND tima < '" + endOfHourTime + "')";
 
@@ -242,7 +242,7 @@ public class ArzController implements Initializable {
                  ResultSet rs = stmt.executeQuery(query)) {
 
                 if (rs.next()) {
-                    double avgPrice = rs.getDouble("avg_usd");
+                    double avgPrice = rs.getDouble("avg_EUR");
                     series.getData().add(new XYChart.Data<>(24 - i, avgPrice));
                 }
             } catch (Exception e) {
@@ -263,13 +263,13 @@ public class ArzController implements Initializable {
                 LocalTime currentTime = LocalTime.now();
                 String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-                String query = "SELECT usd FROM ag WHERE CONCAT(date, ' ', tima) <= ? ORDER BY CONCAT(date, ' ', tima) DESC LIMIT 1";
+                String query = "SELECT EUR FROM ag WHERE CONCAT(date, ' ', tima) <= ? ORDER BY CONCAT(date, ' ', tima) DESC LIMIT 1";
                 PreparedStatement preparedStatement = connect.prepareStatement(query);
                 preparedStatement.setString(1, formattedDate + " " + formattedTime);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
-                    double usd = resultSet.getDouble("usd");
-                    this.price.setText(String.valueOf(usd));
+                    double EUR = resultSet.getDouble("EUR");
+                    this.price.setText(String.valueOf(EUR));
                 }
             } catch (Throwable var20) {
                 if (connect != null) {

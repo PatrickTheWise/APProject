@@ -53,6 +53,16 @@ public class Database {
             preparedStmt.setString (6, firstname);
             preparedStmt.setString (7, lastname);
             preparedStmt.execute();
+            sql = ("insert into Wallet (walletID, USD, EUR, Toman, YEN, GBP, Akshe)" + "values(?, ?, ?, ?, ?, ?, ?)");
+            preparedStmt = connection().prepareStatement(sql);
+            preparedStmt.setInt (1, ++count);
+            preparedStmt.setDouble(2, 0);
+            preparedStmt.setDouble(3, 0);
+            preparedStmt.setDouble(4, 0);
+            preparedStmt.setDouble(5, 0);
+            preparedStmt.setDouble(6, 0);
+            preparedStmt.setDouble(7, 1000);
+            preparedStmt.execute();
         }
     }
 
