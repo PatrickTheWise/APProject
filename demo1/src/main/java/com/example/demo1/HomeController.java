@@ -318,16 +318,40 @@ public class HomeController implements Initializable {
     public void tohome(ActionEvent actionEvent) {
     }
 
-    public void toYen(ActionEvent actionEvent) {
+    public void toYen(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Yen.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
-    public void toEur(ActionEvent actionEvent) {
+    public void toEur(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("EUR.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
-    public void toGb(ActionEvent actionEvent) {
+    public void toGb(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("GBP.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
-    public void toToman(ActionEvent actionEvent) {
+    public void toToman(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Toman.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     public void toUsd(ActionEvent actionEvent) throws IOException {
