@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ArzController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="540.0" prefWidth="800.0" style="-fx-background-color: #231f20;">
          <children>
@@ -82,6 +82,13 @@
                </font>
             </Text>
             <ImageView fx:id="CurrencyIMG" fitHeight="48.0" fitWidth="50.0" layoutX="49.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="price1" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="561.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تغییرات:" textAlignment="RIGHT" wrappingWidth="61.336761474609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="minute" layoutX="252.0" layoutY="418.0" mnemonicParsing="false" text="دقیقه ای" />
+            <Button fx:id="daily" layoutX="145.0" layoutY="418.0" mnemonicParsing="false" text="روزانه" />
          </children>
       </AnchorPane>
    </children>

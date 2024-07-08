@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -38,6 +39,9 @@ public class ArzController implements Initializable {
     private ListView<?> orderLists;
     @FXML
     private Text price;
+
+    @FXML
+    private Button daily, minute;
     @FXML
     private NumberAxis xAxis;
     @FXML
