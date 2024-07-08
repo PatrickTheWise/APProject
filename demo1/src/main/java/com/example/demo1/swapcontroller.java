@@ -78,7 +78,7 @@ public class swapcontroller implements Initializable {
     @FXML
     private Label time;
     @FXML
-    private Label khorooji;
+    private TextField khorooji;
 
     @FXML
     private Button transfer;
@@ -305,8 +305,13 @@ public class swapcontroller implements Initializable {
     }
 
     @FXML
-    void toprof(ActionEvent event) {
-
+    void toprof(ActionEvent event) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("profile.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     @FXML

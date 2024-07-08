@@ -20,7 +20,13 @@ public class Database {
         ResultSet rs = stmn.executeQuery("select * from users");
         while (rs.next()){
             if (username.equals(rs.getString(2)) && pass.equals(rs.getString(3))){
-
+                User.walletID = rs.getInt(1);
+                User.Username = rs.getString(2);
+                User.Password = rs.getString(3);
+                User.PhoneNumber = rs.getString(4);
+                User.Email = rs.getString(5);
+                User.Firstname = rs.getString(6);
+                User.Lastname = rs.getString(7);
                 ///inja etelato dakhel class user mirizim  ****************************
                 return true;
             }
@@ -54,6 +60,16 @@ public class Database {
             preparedStmt.setString (7, lastname);
             preparedStmt.execute();
         }
+    }
+    public static boolean WalletCheck(int Wallet) throws SQLException {
+        Statement stmn = connection().createStatement();
+        ResultSet rs = stmn.executeQuery("select * from users");
+        while (rs.next()){
+            if (Wallet == rs.getInt(1)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

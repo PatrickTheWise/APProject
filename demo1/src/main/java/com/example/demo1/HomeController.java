@@ -306,7 +306,13 @@ public class HomeController implements Initializable {
         newStage.show();
     }
 
-    public void toprof(ActionEvent actionEvent) {
+    public void toprof(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("profile.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 
     public void tohome(ActionEvent actionEvent) {

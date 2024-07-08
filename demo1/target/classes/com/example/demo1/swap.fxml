@@ -105,13 +105,14 @@
             </Button>
          </items>
       </ToolBar>
-      <Label fx:id="khorooji" layoutX="135.0" layoutY="312.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white;">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font></Label>
       <Label fx:id="time" layoutX="24.0" layoutY="26.0" prefHeight="18.0" prefWidth="98.0" textFill="#dcf405">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font></Label>
+      <TextField fx:id="khorooji" editable="false" layoutX="135.0" layoutY="313.0" prefHeight="26.0" prefWidth="160.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
