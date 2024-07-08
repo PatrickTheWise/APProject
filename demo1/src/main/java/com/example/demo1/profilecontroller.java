@@ -66,34 +66,57 @@ public class profilecontroller implements Initializable {
 
     @FXML
     void changefirstname(ActionEvent event) throws SQLException {
-        User.Firstname = firstnametextfield.getText();
-        Database.profileUpdater("firstname", User.Firstname, User.walletID);
+        if (regex.isValidName(firstname.getText())) {
+            User.Firstname = firstnametextfield.getText();
+            Database.profileUpdater("firstname", User.Firstname, User.walletID);
+        }
+        else {
+            firstnametextfield.setStyle("-fx-border-color: red;");
+        }
     }
 
     @FXML
     void changelastname(ActionEvent event) throws SQLException {
-        User.Lastname = lastnametextfiled.getText();
-        Database.profileUpdater("lastname", User.Lastname, User.walletID);
-
+        if (regex.isValidName(lastnametextfiled.getText())) {
+            User.Lastname = lastnametextfiled.getText();
+            Database.profileUpdater("lastname", User.Lastname, User.walletID);
+        }
+        else {
+            lastnametextfiled.setStyle("-fx-border-color: red;");
+        }
     }
 
     @FXML
     void changepassword(ActionEvent event) throws SQLException {
-        User.Password = passtextfield.getText();
-        Database.profileUpdater("pass", User.Password, User.walletID);
-
+        if (regex.isValidPassword(passtextfield.getText())) {
+            User.Password = passtextfield.getText();
+            Database.profileUpdater("pass", User.Password, User.walletID);
+        }
+        else {
+            passtextfield.setStyle("-fx-border-color: red;");
+        }
     }
 
     @FXML
     void changephone(ActionEvent event) throws SQLException {
-        User.PhoneNumber = phonetextfiled.getText();
-        Database.profileUpdater("phone", User.PhoneNumber, User.walletID);
+        if (regex.isValidPhone(phonetextfiled.getText())) {
+            User.PhoneNumber = phonetextfiled.getText();
+            Database.profileUpdater("phone", User.PhoneNumber, User.walletID);
+        }
+        else {
+            phonetextfiled.setStyle("-fx-border-color: red;");
+        }
     }
 
     @FXML
     void chnageemail(ActionEvent event) throws SQLException {
-        User.Email = emailtextfield.getText();
-        Database.profileUpdater("mail", User.Email, User.walletID);
+        if (regex.isValidEmail(emailtextfield.getText())) {
+            User.Email = emailtextfield.getText();
+            Database.profileUpdater("mail", User.Email, User.walletID);
+        }
+        else {
+            emailtextfield.setStyle("-fx-border-color: red;");
+        }
 
     }
 

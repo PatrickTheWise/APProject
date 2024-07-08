@@ -350,11 +350,16 @@ public class swapcontroller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        vorrodi.textProperty().addListener((observable, oldValue, newValue) -> {
-            double convertedAmount = payetabdil;
-            upto();
-            khorooji.setText(String.valueOf(convertedAmount));
-        });
+        if (vorrodi.getText() == null || vorrodi.getText() == ""){
+
+        }
+        else {
+            vorrodi.textProperty().addListener((observable, oldValue, newValue) -> {
+                double convertedAmount = payetabdil;
+                upto();
+                khorooji.setText(String.valueOf(convertedAmount));
+            });
+        }
         showTime();
     }
 
@@ -407,7 +412,10 @@ public class swapcontroller implements Initializable {
         }
     }
     void upto() {
-        if (menuswap.getText().equals("TOMAN") && User.TMN >= Double.parseDouble(vorrodi.getText())){
+        if (vorrodi.getText() == null || vorrodi.getText() == ""){
+
+        }
+        else if (menuswap.getText().equals("TOMAN") && User.TMN >= Double.parseDouble(vorrodi.getText())){
             if (menuto.getText().equals("YEN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / TMNPRICE;
                 payetabdil = payevorrodi * YENPRICE;

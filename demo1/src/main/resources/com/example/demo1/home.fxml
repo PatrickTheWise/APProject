@@ -62,7 +62,7 @@
             <TableColumn fx:id="marketcol" prefWidth="90.4000244140625" style="-fx-background-color: white; -fx-font-color: #dcf405;" text="بازار" />
         </columns>
       </TableView>
-      <Label fx:id="time" layoutX="358.0" layoutY="14.0" prefHeight="18.0" prefWidth="102.0" textFill="#dcf405">
+      <Label fx:id="time" layoutX="67.0" layoutY="24.0" prefHeight="18.0" prefWidth="102.0" textFill="#dcf405">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>

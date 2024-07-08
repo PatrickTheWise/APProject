@@ -37,38 +37,38 @@
             <ListView fx:id="orderLists" layoutX="455.0" layoutY="86.0" prefHeight="335.0" prefWidth="336.0" />
             <ToolBar layoutX="278.0" layoutY="467.0" prefHeight="58.0" prefWidth="244.0" style="-fx-background-color: #ad974f;">
                <items>
-                  <Button minWidth="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="40.0">
+                  <Button fx:id="home" minWidth="50.0" mnemonicParsing="false" onAction="#tohome" prefHeight="22.0" prefWidth="40.0">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../demo1/src/main/resources/com/example/demo1/home.png" />
+                              <Image url="@home.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="tranfer" mnemonicParsing="false" onAction="#totranfer">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../demo1/src/main/resources/com/example/demo1/transfer.png" />
+                              <Image url="@transfer.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" minWidth="41.0" mnemonicParsing="false" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
+                  <Button fx:id="swap" alignment="CENTER" minWidth="41.0" mnemonicParsing="false" onAction="#toswap" prefHeight="48.0" textOverrun="CENTER_WORD_ELLIPSIS">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../demo1/src/main/resources/com/example/demo1/swap.png" />
+                              <Image url="@swap.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" prefWidth="50.0">
+                  <Button fx:id="profile" mnemonicParsing="false" onAction="#toprofile" prefWidth="50.0">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../demo1/src/main/resources/com/example/demo1/profile.png" />
+                              <Image url="@profile.png" />
                            </image>
                         </ImageView>
                      </graphic>
