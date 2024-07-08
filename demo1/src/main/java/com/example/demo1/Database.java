@@ -24,8 +24,13 @@ public class Database {
         ResultSet rs = stmn.executeQuery("select * from users");
         while (rs.next()){
             if (username.equals(rs.getString(2)) && pass.equals(rs.getString(3))){
-
-                ///inja etelato dakhel class user mirizim  ****************************
+                User.walletID = rs.getInt(1);
+                User.Username = rs.getString(2);
+                User.Password = rs.getString(3);
+                User.PhoneNumber = rs.getString(4);
+                User.Email = rs.getString(5);
+                User.Firstname = rs.getString(6);
+                User.Lastname = rs.getString(7);
                 return true;
             }
         }
@@ -101,14 +106,34 @@ public class Database {
             }
             previousPrice = currentPrice;
         }
-
-        // Close resources
         resultSet.close();
         preparedStatement.close();
     } catch (SQLException e) {
         e.printStackTrace();
     }
         return null;
+    }
+
+    public static void currencySwap(String givenC, String takenC, double givenM, double takenM, int walletID) throws SQLException {
+        String query = "update wallet set ? = ? , ? = ? where walletID = ?";
+        PreparedStatement preparedStatement = connection().prepareStatement(query);
+        preparedStatement.setString(1, givenC);
+        preparedStatement.setDouble(2, givenM);
+        preparedStatement.setString(3, takenC);
+        preparedStatement.setDouble(4, takenM);
+        preparedStatement.setInt(5, walletID);
+        preparedStatement.execute();
+    }
+
+    public static boolean WalletCheck(int Wallet) throws SQLException {
+        Statement stmn = connection().createStatement();
+        ResultSet rs = stmn.executeQuery("select * from users");
+        while (rs.next()) {
+            if (Wallet == rs.getInt(1)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class HelloApplication extends Application {
 

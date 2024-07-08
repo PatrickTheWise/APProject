@@ -29,7 +29,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text fx:id="price" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="717.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="قیمت:" textAlignment="RIGHT" wrappingWidth="61.336761474609375">
+            <Text fx:id="price" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="636.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="قیمت:" textAlignment="RIGHT" wrappingWidth="142.13681030273438">
                <font>
                   <Font size="15.0" />
                </font>
@@ -84,7 +84,7 @@
                <image>
                   <Image url="@usa.png" />
                </image></ImageView>
-            <Text fx:id="changePercentage" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="561.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تغییرات:" textAlignment="RIGHT" wrappingWidth="61.336761474609375">
+            <Text fx:id="changePercentage" boundsType="LOGICAL_VERTICAL_CENTER" fill="WHITE" layoutX="468.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تغییرات:" textAlignment="RIGHT" wrappingWidth="158.93673706054688">
                <font>
                   <Font size="15.0" />
                </font>

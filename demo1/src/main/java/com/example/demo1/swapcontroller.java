@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Calendar;
@@ -116,7 +117,7 @@ public class swapcontroller implements Initializable {
     double payevorrodi;
     double payetabdil;
     @FXML
-    void swaparz(ActionEvent event) {
+    void swaparz(ActionEvent event) throws SQLException {
         if (menuswap.getText().equals("TOMAN") && User.TMN >= Double.parseDouble(vorrodi.getText())){
             if (menuto.getText().equals("YEN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / TMNPRICE;
@@ -124,8 +125,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.TMN -= Double.parseDouble(vorrodi.getText());
                 User.YEN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("Toman", "YEN", User.TMN, User.YEN, User.walletID);
             }
             else if (menuto.getText().equals("USD")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / TMNPRICE;
@@ -133,8 +133,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.TMN -= Double.parseDouble(vorrodi.getText());
                 User.USD += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("Toman", "USD", User.TMN, User.USD, User.walletID);
             }
             else if (menuto.getText().equals("EUR")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / TMNPRICE;
@@ -142,8 +141,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.TMN -= Double.parseDouble(vorrodi.getText());
                 User.EUR += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("Toman", "EUR", User.TMN, User.EUR, User.walletID);
             }
             else if (menuto.getText().equals("GBP")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / TMNPRICE;
@@ -151,8 +149,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.TMN -= Double.parseDouble(vorrodi.getText());
                 User.GBP += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("Toman", "GBP", User.TMN, User.GBP, User.walletID);
             }
         }
         else if (menuswap.getText().equals("USD") && User.USD >= Double.parseDouble(vorrodi.getText())){
@@ -162,8 +159,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.USD -= Double.parseDouble(vorrodi.getText());
                 User.GBP += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("USD", "GBP", User.USD, User.GBP, User.walletID);
             }
             else if (menuto.getText().equals("YEN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / USDPRICE;
@@ -171,8 +167,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.USD -= Double.parseDouble(vorrodi.getText());
                 User.YEN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("USD", "YEN", User.USD, User.YEN, User.walletID);
             }
             else if (menuto.getText().equals("TOMAN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / USDPRICE;
@@ -180,8 +175,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.USD -= Double.parseDouble(vorrodi.getText());
                 User.TMN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("USD", "Toman", User.USD, User.TMN, User.walletID);
             }
             else if (menuto.getText().equals("EUR")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / USDPRICE;
@@ -189,8 +183,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.USD -= Double.parseDouble(vorrodi.getText());
                 User.EUR += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("USD", "EUR", User.USD, User.EUR, User.walletID);
             }
         }
         else if (menuswap.getText().equals("GBP") && User.GBP >= Double.parseDouble(vorrodi.getText())){
@@ -200,8 +193,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.GBP -= Double.parseDouble(vorrodi.getText());
                 User.TMN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("GBP", "Toman", User.GBP, User.TMN, User.walletID);
             }
             else if (menuto.getText().equals("USD")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / GBPPRICE;
@@ -209,8 +201,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.GBP -= Double.parseDouble(vorrodi.getText());
                 User.USD += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("GBP", "USD", User.TMN, User.USD, User.walletID);
             }
             else if (menuto.getText().equals("EUR")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / GBPPRICE;
@@ -218,8 +209,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.GBP -= Double.parseDouble(vorrodi.getText());
                 User.EUR += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("GBP", "EUR", User.GBP, User.EUR, User.walletID);
             }
             else if (menuto.getText().equals("YEN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / GBPPRICE;
@@ -227,8 +217,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.GBP -= Double.parseDouble(vorrodi.getText());
                 User.YEN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("GBP", "YEN", User.GBP, User.YEN, User.walletID);
             }
         }
         else if (menuswap.getText().equals("EUR") && User.EUR >= Double.parseDouble(vorrodi.getText())){
@@ -238,8 +227,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.EUR -= Double.parseDouble(vorrodi.getText());
                 User.USD += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("EUR", "USD", User.EUR, User.USD, User.walletID);
             }
             else if (menuto.getText().equals("YEN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / EURPRICE;
@@ -247,8 +235,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.EUR -= Double.parseDouble(vorrodi.getText());
                 User.YEN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("EUR", "YEN", User.EUR, User.YEN, User.walletID);
             }
             else if (menuto.getText().equals("TOMAN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / EURPRICE;
@@ -256,8 +243,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.EUR -= Double.parseDouble(vorrodi.getText());
                 User.TMN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("EUR", "TOMAN", User.EUR, User.TMN, User.walletID);
             }
             else if (menuto.getText().equals("GBP")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / EURPRICE;
@@ -265,8 +251,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.EUR -= Double.parseDouble(vorrodi.getText());
                 User.GBP += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("EUR", "GBP", User.EUR, User.GBP, User.walletID);
             }
         }
         else if (menuswap.getText().equals("YEN") && User.YEN >= Double.parseDouble(vorrodi.getText())){
@@ -276,8 +261,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.YEN -= Double.parseDouble(vorrodi.getText());
                 User.USD += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("YEN", "USD", User.YEN, User.USD, User.walletID);
             }
             else if (menuto.getText().equals("TOMAN")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / YENPRICE;
@@ -285,8 +269,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.YEN -= Double.parseDouble(vorrodi.getText());
                 User.TMN += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("YEN", "TOMAN", User.YEN, User.TMN, User.walletID);
             }
             else if (menuto.getText().equals("GBP")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / YENPRICE;
@@ -294,8 +277,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.YEN -= Double.parseDouble(vorrodi.getText());
                 User.GBP += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("YEN", "GBP", User.YEN, User.GBP, User.walletID);
             }
             else if (menuto.getText().equals("EUR")){
                 payevorrodi = Double.parseDouble(vorrodi.getText()) / YENPRICE;
@@ -303,8 +285,7 @@ public class swapcontroller implements Initializable {
                 khorooji.setText(String.valueOf(payetabdil));
                 User.YEN -= Double.parseDouble(vorrodi.getText());
                 User.EUR += payetabdil;
-                vorrodi.setText("");
-                khorooji.setText("");
+                Database.currencySwap("YEN", "EUR", User.YEN, User.EUR, User.walletID);
             }
         }
     }
@@ -358,13 +339,8 @@ public class swapcontroller implements Initializable {
     void toswap(ActionEvent event) {}
 
     @FXML
-    void totransfer(ActionEvent event) throws IOException {
-        Stage newStage = (Stage)this.transfer.getScene().getWindow();
-        newStage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        newStage.setScene(scene);
-        newStage.show();
+    void totransfer(ActionEvent event) {
+
     }
 
     @Override
