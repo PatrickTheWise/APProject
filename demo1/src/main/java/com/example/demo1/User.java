@@ -8,7 +8,7 @@ public class User {
     public static String Email = "amir@gmail.com";
     public static String PhoneNumber = "09152256454";
     public static String Password = "38443477899900";
-    public static int walletID = 2;
+    public static int walletID = 1;
     public static double YEN = 200;
     public static double EUR = 100;
     public static double USD = 150;

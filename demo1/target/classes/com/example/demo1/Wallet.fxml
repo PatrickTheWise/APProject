@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="471.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.Walletcontroller">
    <children>
-      <Label fx:id="wallet" layoutX="196.0" layoutY="7.0" text="Wallet Page" textFill="#ad974f">
+      <Label layoutX="196.0" layoutY="7.0" text="Wallet Page" textFill="#ad974f">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
@@ -46,15 +46,15 @@
             <Font name="System Bold Italic" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="paye" layoutX="189.0" layoutY="414.0" onAction="#payetext" text="0">
+      <TextField fx:id="paye" layoutX="189.0" layoutY="414.0" onAction="#payetext">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="gbp" layoutX="131.0" layoutY="94.0" onAction="#gbptext" text="0" />
-      <TextField fx:id="eur" layoutX="132.0" layoutY="163.0" onAction="#eurtext" text="0" />
-      <TextField fx:id="yen" layoutX="132.0" layoutY="227.0" onAction="#yentext" text="0" />
-      <TextField fx:id="usd" layoutX="132.0" layoutY="294.0" onAction="#usdtext" text="0" />
-      <TextField fx:id="toman" layoutX="132.0" layoutY="356.0" onAction="#tomantext" text="0" />
+      <TextField fx:id="gbp" layoutX="131.0" layoutY="94.0" onAction="#gbptext" />
+      <TextField fx:id="eur" layoutX="132.0" layoutY="163.0" onAction="#eurtext" />
+      <TextField fx:id="yen" layoutX="132.0" layoutY="227.0" onAction="#yentext" />
+      <TextField fx:id="usd" layoutX="132.0" layoutY="294.0" onAction="#usdtext" />
+      <TextField fx:id="toman" layoutX="132.0" layoutY="356.0" onAction="#tomantext" />
    </children>
 </AnchorPane>

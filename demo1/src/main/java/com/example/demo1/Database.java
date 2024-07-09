@@ -1,6 +1,5 @@
 package com.example.demo1;
 
-import java.lang.reflect.Field;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -382,6 +381,167 @@ public class Database {
             User.TMN = rs.getDouble(4);
             User.EUR = rs.getDouble(3);
         }
+    }
+
+    public static void exchangeSQL(Boolean sorb, String user, String currency, double amount) throws SQLException {
+        int orderID = 0, walletID = 0;
+        boolean exchangeDone = false;
+        Statement stmt = connection().createStatement();
+        int count = 0;
+        ResultSet RS = stmt.executeQuery("select orderID from orders");
+        while (RS.next()) {
+            count = RS.getInt(1);
+        }
+        String sql = "insert into orders(sorb, username, dealuser, currency, amount, orderID, walletID) values (?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement preparedStatement = connection().prepareStatement(sql);
+        preparedStatement.setBoolean(1, sorb);
+        preparedStatement.setString(2, user);
+        preparedStatement.setString(3, null);
+        preparedStatement.setString(4, currency);
+        preparedStatement.setDouble(5, amount);
+        preparedStatement.setInt(6, ++count);
+        preparedStatement.setInt(7, User.walletID);
+        preparedStatement.execute();
+        String query = "select * from orders";
+        Statement statement = connection().createStatement();
+        ResultSet rs = statement.executeQuery(query);
+        while (rs.next()){
+            exchangeDone = false;
+            if (rs.getDouble(5) == amount && rs.getString(4).equals(currency) && sorb == !rs.getBoolean(1) && rs.getString(3).equals(null)){
+                orderID = rs.getInt(6);
+                exchangeDone = true;
+                walletID = rs.getInt(7);
+            }
+            if (exchangeDone){
+                String sql2 = "update orders set dealuser = ? where orderID = ?";
+                PreparedStatement ps = connection().prepareStatement(sql2);
+                ps.setString(1, user);
+                ps.setInt(2, orderID);
+                ps.execute();
+                String sql3 = "update orders set dealuser = ? where orderID = ?";
+                ps = connection().prepareStatement(sql3);
+                ps.setString(1, rs.getString(2));
+                ps.setInt(2, ++count);
+                ps.execute();
+
+
+                if (currency.equals("USD")) {
+                    String sql4 = "update wallet set USD = USD + ?, Akshe = Akshe + ? where walletID = ?";
+                    ps = connection().prepareStatement(sql4);
+                    if (sorb) {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -7.9 * amount);
+                    } else {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 7.9 * amount);
+                    }
+                    ps.setInt(3, User.walletID);
+                    ps.execute();
+                    if (sorb) {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 7.9 * amount);
+                    } else {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -7.9 * amount);
+                    }
+                    ps.setInt(3, walletID);
+                    ps.execute();
+                }
+
+                else if (currency.equals("EUR")) {
+                    String sql4 = "update wallet set EUR = EUR + ?, Akshe = Akshe + ? where walletID = ?";
+                    ps = connection().prepareStatement(sql4);
+                    if (sorb) {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -0.07 * amount);
+                    } else {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 0.07 * amount);
+                    }
+                    ps.setInt(3, User.walletID);
+                    ps.execute();
+                    if (sorb) {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 0.07 * amount);
+                    } else {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -0.07 * amount);
+                    }
+                    ps.setInt(3, walletID);
+                    ps.execute();
+                }
+
+                else if (currency.equals("TMN")) {
+                    String sql4 = "update wallet set Toman = Toman + ?, Akshe = Akshe + ? where walletID = ?";
+                    ps = connection().prepareStatement(sql4);
+                    if (sorb) {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -590.678 * amount);
+                    } else {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 590.678 * amount);
+                    }
+                    ps.setInt(3, User.walletID);
+                    ps.execute();
+                    if (sorb) {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 590.687 * amount);
+                    } else {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -590.678 * amount);
+                    }
+                    ps.setInt(3, walletID);
+                    ps.execute();
+                }
+
+                else if (currency.equals("YEN")) {
+                    String sql4 = "update wallet set YEN = YEN + ?, Akshe = Akshe + ? where walletID = ?";
+                    ps = connection().prepareStatement(sql4);
+                    if (sorb) {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -354.34 * amount);
+                    } else {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 354.34 * amount);
+                    }
+                    ps.setInt(3, User.walletID);
+                    ps.execute();
+                    if (sorb) {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 354.34 * amount);
+                    } else {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -354.34 * amount);
+                    }
+                    ps.setInt(3, walletID);
+                    ps.execute();
+                }
+
+                else if (currency.equals("GBP")) {
+                    String sql4 = "update wallet set GBP = GBP + ?, Akshe = Akshe + ? where walletID = ?";
+                    ps = connection().prepareStatement(sql4);
+                    if (sorb) {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -4.82 * amount);
+                    } else {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 4.82 * amount);
+                    }
+                    ps.setInt(3, User.walletID);
+                    ps.execute();
+                    if (sorb) {
+                        ps.setDouble(1, (-1 * amount));
+                        ps.setDouble(2, 4.82 * amount);
+                    } else {
+                        ps.setDouble(1, amount);
+                        ps.setDouble(2, -4.82 * amount);
+                    }
+                    ps.setInt(3, walletID);
+                    ps.execute();
+                }
+            }
+        }
+
     }
 }
 
