@@ -369,4 +369,13 @@ public class HomeController implements Initializable {
         newStage.setScene(scene);
         newStage.show();
     }
+
+    public void exchange(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.time.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("exchange.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
+    }
 }
