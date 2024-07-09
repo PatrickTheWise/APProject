@@ -71,7 +71,7 @@ public class swapcontroller implements Initializable {
     private Button prof;
 
     @FXML
-    private Button swap;
+    public static Button swap;
 
     @FXML
     private Button swapbutton;

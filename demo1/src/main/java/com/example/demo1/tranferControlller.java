@@ -53,7 +53,7 @@ public class tranferControlller implements Initializable {
     private Label time;
 
     @FXML
-    private Button transfer;
+    public static Button transfer;
 
     @FXML
     private TextField wallettext;

@@ -39,12 +39,12 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button layoutX="226.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#buy" style="-fx-background-color: LIME;" text="BUY" textFill="WHITE">
+            <Button fx:id="BUY" layoutX="226.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#buy" style="-fx-background-color: LIME;" text="BUY" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="307.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#sell" style="-fx-background-color: RED;" text="SELL" textFill="WHITE">
+            <Button fx:id="SELL" layoutX="307.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#sell" style="-fx-background-color: RED;" text="SELL" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="16.0" />
                </font>
