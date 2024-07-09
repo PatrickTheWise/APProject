@@ -17,6 +17,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -50,6 +51,17 @@ public class TomanController implements Initializable {
     private NumberAxis xAxis;
     @FXML
     private NumberAxis yAxis;
+    @FXML
+    private Button profile;
+
+    @FXML
+    private Button swap;
+
+    @FXML
+    private Button transfer;
+    @FXML
+    private  Button home;
+
 
     int chartType = 1;
     XYChart.Series<Number, Number> series = new XYChart.Series();
@@ -310,5 +322,40 @@ public class TomanController implements Initializable {
         updateHourly();
         updateLabels();
         chartType = 2;
+    }
+
+    public void totransfer(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.CurrencyIMG.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("transfer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
+    }
+
+    public void toprofile(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.CurrencyIMG.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("profile.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
+    }
+
+    public void tohome(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.CurrencyIMG.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
+    }
+    public void goswap(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.CurrencyIMG.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("swap.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
     }
 }
