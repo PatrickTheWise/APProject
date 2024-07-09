@@ -11,7 +11,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.profilecontroller">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20;">
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #231F20; -fx-border-color: #ad974f;">
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="486.0" layoutY="14.0">
                <image>
@@ -109,7 +109,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="wallet" layoutX="520.0" layoutY="133.0" mnemonicParsing="false" onAction="#towallet" prefHeight="58.0" prefWidth="66.0" style="-fx-background-color: #ad974f;" text="Wallet ">
+            <Button fx:id="wallet" layoutX="520.0" layoutY="133.0" mnemonicParsing="false" onAction="#towallet" prefHeight="58.0" prefWidth="66.0" style="-fx-background-color: #ad974f;" text="Wallet " textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>

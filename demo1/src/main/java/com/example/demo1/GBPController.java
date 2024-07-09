@@ -38,10 +38,7 @@ public class GBPController implements Initializable {
     private LineChart<Number, Number> LineChart = new LineChart(new NumberAxis(), new NumberAxis());
     @FXML
     private Text currencyName;
-    @FXML
-    private Text lastDeal;
-    @FXML
-    private ListView<?> orderLists;
+
     @FXML
     private Text price, changePercentage;
 

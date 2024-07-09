@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -66,11 +67,21 @@ public class HelloController implements Initializable{
 
     @FXML
     public void OpenHome() throws IOException, SQLException {
-        if (captchaField.getText().equals(cap) && Database.loginCheck(userField.getText(), passField.getText())) {
+        if (captchaField.getText().equals(cap) && userField.getText().equals("admin") && passField.getText().equals("11111")){
+            Stage newStage = (Stage) login.getScene().getWindow();
+            newStage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("admin.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            newStage.setScene(scene);
+            newStage.show();
+            User.Username = userField.getText();
+            User.Password = userField.getText();
+        }
+        else if (captchaField.getText().equals(cap) && Database.loginCheck(userField.getText(), passField.getText())) {
             Stage newStage = (Stage) login.getScene().getWindow();
             newStage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("home.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 800, 540);
+            Scene scene = new Scene(fxmlLoader.load());
             newStage.setScene(scene);
             newStage.show();
             User.Username = userField.getText();
@@ -83,5 +94,17 @@ public class HelloController implements Initializable{
                 passField.setStyle("-fx-border-color: red;");
             }
         }
+    }
+
+    public void reloadcaptcha(ActionEvent actionEvent) {
+        cap = CaptchaGenerator.generateCaptchaString();
+        try {
+            CaptchaGenerator.captcha(cap, 77, 255,  82);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        File file = new File("captcha.png");
+        Image image = new Image(file.toURI().toString());
+        bar.setImage(image);
     }
 }

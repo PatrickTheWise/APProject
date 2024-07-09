@@ -40,7 +40,10 @@
             <Image url="@usa.png" />
          </image>
       </ImageView>
-      <Button fx:id="Back" layoutX="35.0" layoutY="21.0" mnemonicParsing="false" onAction="#Backtoprofile" text="Back" />
+      <Button fx:id="Back" layoutX="525.0" layoutY="21.0" mnemonicParsing="false" onAction="#Backtoprofile" style="-fx-background-color: #ad974f;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
       <Label layoutX="74.0" layoutY="409.0" text="Balance : " textFill="#eaeaea">
          <font>
             <Font name="System Bold Italic" size="25.0" />
@@ -51,10 +54,25 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="gbp" layoutX="131.0" layoutY="94.0" onAction="#gbptext" text="0" />
-      <TextField fx:id="eur" layoutX="132.0" layoutY="163.0" onAction="#eurtext" text="0" />
-      <TextField fx:id="yen" layoutX="132.0" layoutY="227.0" onAction="#yentext" text="0" />
-      <TextField fx:id="usd" layoutX="132.0" layoutY="294.0" onAction="#usdtext" text="0" />
-      <TextField fx:id="toman" layoutX="132.0" layoutY="356.0" onAction="#tomantext" text="0" />
+      <TextField fx:id="gbp" layoutX="131.0" layoutY="94.0" onAction="#gbptext" style="-fx-background-color: #eaeaea;" text="0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="eur" layoutX="132.0" layoutY="163.0" onAction="#eurtext" style="-fx-background-color: #eaeaea;" text="0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="yen" layoutX="132.0" layoutY="227.0" onAction="#yentext" style="-fx-background-color: #eaeaea;" text="0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="usd" layoutX="132.0" layoutY="294.0" onAction="#usdtext" style="-fx-background-color: #eaeaea;" text="0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="toman" layoutX="132.0" layoutY="356.0" onAction="#tomantext" style="-fx-background-color: #eaeaea;" text="0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></TextField>
    </children>
 </AnchorPane>

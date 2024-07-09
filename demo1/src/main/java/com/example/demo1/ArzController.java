@@ -39,10 +39,6 @@ public class ArzController implements Initializable {
     @FXML
     private Text currencyName;
     @FXML
-    private Text lastDeal;
-    @FXML
-    private ListView<?> orderLists;
-    @FXML
     private Text price, changePercentage;
 
     @FXML
