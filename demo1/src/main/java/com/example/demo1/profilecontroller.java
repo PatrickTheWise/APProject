@@ -162,4 +162,13 @@ public class profilecontroller implements Initializable {
         phonetextfiled.setText(User.PhoneNumber);
         passtextfield.setText(User.Password);
     }
+
+    public void towallet(ActionEvent actionEvent) throws IOException {
+        Stage newStage = (Stage)this.email.getScene().getWindow();
+        newStage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloController.class.getResource("Wallet.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        newStage.setScene(scene);
+        newStage.show();
+    }
 }
