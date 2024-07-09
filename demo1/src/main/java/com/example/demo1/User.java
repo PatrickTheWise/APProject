@@ -14,4 +14,5 @@ public class User {
     public static double USD = 150;
     public static double TMN = 100;
     public static double GBP = 350;
+    public static double AKSHE = 0;
 }

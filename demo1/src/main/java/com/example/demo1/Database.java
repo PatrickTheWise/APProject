@@ -368,5 +368,20 @@ public class Database {
             preparedStatement.execute();
         }
     }
+
+    public static void updateWallet() throws SQLException {
+        String query = "select * from wallet where walletID = ?";
+        PreparedStatement preparedStatement = connection().prepareStatement(query);
+        preparedStatement.setInt(1, User.walletID);
+        ResultSet rs = preparedStatement.executeQuery();
+        while (rs.next()){
+            User.GBP = rs.getDouble(6);
+            User.AKSHE = rs.getDouble(7);
+            User.USD = rs.getDouble(2);
+            User.YEN = rs.getDouble(5);
+            User.TMN = rs.getDouble(4);
+            User.EUR = rs.getDouble(3);
+        }
+    }
 }
 
