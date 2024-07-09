@@ -369,7 +369,7 @@ public class Database {
         }
     }
 
-    public static void showWallet() throws SQLException {
+    public static void updateWallet() throws SQLException {
         String query = "select * from wallet where walletID = ?";
         PreparedStatement preparedStatement = connection().prepareStatement(query);
         preparedStatement.setInt(1, User.walletID);
